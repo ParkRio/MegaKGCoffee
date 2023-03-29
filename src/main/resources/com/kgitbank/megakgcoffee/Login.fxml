@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.LoginController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="250.0">
          <children>
@@ -37,6 +37,9 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <font>
+                  <Font size="13.0" />
+               </font>
             </Label>
             <TextField />
          </children>
@@ -52,7 +55,11 @@
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Label text="비밀번호" />
+            <Label text="비밀번호">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
             <TextField>
                <HBox.margin>
                   <Insets />
@@ -65,15 +72,30 @@
       </HBox>
       <VBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="100.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="67.0" text="Login" />
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="67.0" text="회원가입">
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="70.0" text="Login">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="70.0" text="회원가입">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
             </Button>
+            <Label text="아이디 / 비밀번호 찾기">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
    </children>
