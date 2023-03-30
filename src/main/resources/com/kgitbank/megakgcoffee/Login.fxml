@@ -60,7 +60,7 @@
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#regProc" prefHeight="23.0" prefWidth="70.0" text="회원가입">
+            <Button fx:id="reg_button" mnemonicParsing="false" onAction="#regProc" prefHeight="23.0" prefWidth="70.0" text="회원가입">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

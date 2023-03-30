@@ -8,7 +8,15 @@ module com.kgitbank.megakgcoffee {
     opens com.kgitbank.megakgcoffee to javafx.fxml;
     //opens com.kgitbank.megakgcoffee.Controller.Test to javafx.fxml;
     //opens com.kgitbank.megakgcoffee.Controller.Orders to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.Register;
     opens com.kgitbank.megakgcoffee.Controller.Register to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Model.DAO.Register;
+    opens com.kgitbank.megakgcoffee.Model.DAO.Register to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Model.DTO.Register;
+    opens com.kgitbank.megakgcoffee.Model.DTO.Register to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Service.Register;
+    opens com.kgitbank.megakgcoffee.Service.Register to javafx.fxml;
+
     exports com.kgitbank.megakgcoffee;
 
     opens com.kgitbank.megakgcoffee.Controller.Test to javafx.fxml;

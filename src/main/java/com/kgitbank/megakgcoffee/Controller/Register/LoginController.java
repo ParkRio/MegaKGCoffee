@@ -1,55 +1,50 @@
 package com.kgitbank.megakgcoffee.Controller.Register;
 
-import com.kgitbank.megakgcoffee.Service.Register.ILoginService;
+import com.kgitbank.megakgcoffee.Model.DAO.Register.Opener;
 import com.kgitbank.megakgcoffee.Service.Register.LoginService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
-    @FXML
-    TextField reg_id;
-    @FXML
-    PasswordField reg_pwd;
-    private ILoginService service;
-    private Parent Register1;
 
-    public void setRegister1(Parent register) {
-        Register1 = register;
+    @FXML
+    private Button register_button;
+    @FXML TextField reg_id;
+    @FXML PasswordField reg_pwd;
+    private LoginService service;
+    private Opener opener;
+
+    public void setOpener(Opener opener) {
+        this.opener = opener;
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        service = new ILoginService();
+    public void initialize(URL location, ResourceBundle resources) {
+        service = new LoginService();
+        opener = new Opener();
     }
-    
-    //회원가입 버튼
-    public void regProc() {
-        Stage regStage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Register.fxml"));
-        Parent Register = null;
-        try {
-            Register1 = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
+    // 로그인 버튼
+    public void loginProc(){
+        service.loginProc(reg_id.getText(), reg_pwd.getText());
+        String result = service.loginCheck(reg_id.getText());
+        if(result != null && result.equals("Y")) {
+            opener.menuOpen();
         }
-
-        RegisterController regCon = loader.getController();
-        regCon.setRegister(Register1);
-
-        Scene scene = new Scene(Register1);
-        regStage.setTitle("회원가입 화면");
-        regStage.setScene(scene);
-        regStage.show();
     }
 
-    
+    // 가입 버튼
+    public void regProc(){
+        opener.regOpen();
+        service.RegisterButtonClick(register_button);
+    }
+
+
 }
