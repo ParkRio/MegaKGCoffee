@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class PaymentView extends Application {
 
     @Override
     public void init() {
@@ -15,11 +15,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Test.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(),500,500);
-//        stage.setScene(scene);
-//        stage.setTitle("Connection Test");
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),300,500);
+        stage.setScene(scene);
+        stage.setTitle("주문하기");
+        stage.show();
     }
 
     public static void main(String[] args) {
