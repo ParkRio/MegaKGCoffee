@@ -34,7 +34,7 @@ public class LoginController implements Initializable {
     //회원가입 버튼
     public void regProc() {
         Stage regStage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Register.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Register.fxml"));
         Parent Register = null;
         try {
             Register1 = loader.load();
