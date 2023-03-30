@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController">
+   <children>
+      <Label fx:id="homebtn" layoutX="110.0" layoutY="364.0" text="Home" />
+      <Label layoutX="29.0" layoutY="364.0" text="coffee" />
+      <Label layoutX="189.0" layoutY="372.0" text="Label" />
+   </children>
+</Pane>

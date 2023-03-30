@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto&display=swap');
+
+.order_container {
+    -fx-background-color: white;
+}
+
+.order_container Label {
+    -fx-font-family: 'Delicious Handrawn', cursive;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+.order_top_menu_container {
+    -fx-background-color: white;
+}
+
+.order_top_menu_container Text {
+    /*16px*/
+    -fx-font-size: 2em;
+    -fx-text-alignment: center;
+    -fx-font-family: 'Delicious Handrawn', cursive;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+.order_menu_category_container {
+    -fx-background-color: white;
+    -fx-border-radius: 15px;
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-font-size: 0.9em;
+    -fx-font-family: 'Delicious Handrawn', cursive;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+/*.order_menu_category_container:hover {*/
+/*    -fx-background-radius: 15px;*/
+/*    -fx-background-color: gold;*/
+/*    -fx-border-color: black;*/
+/*    -fx-border-width: 3px;*/
+/*    -fx-text-fill: black;*/
+/*}*/
+
+.order_menu_choice_container VBox:hover {
+    -fx-background-color: yellow;
+}
+
+.order_menu_choice_container Label {
+    -fx-font-family: 'Delicious Handrawn', cursive;
+    -fx-font-family: 'Roboto', sans-serif;
+}

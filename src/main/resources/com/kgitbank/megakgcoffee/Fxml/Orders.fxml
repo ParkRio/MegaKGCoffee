@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="order_container" stylesheets="@../../../../Styles/order.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Orders.OrdersController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="400.0" styleClass="order_top_menu_container" stylesheets="@../../../../Styles/order.css">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="70.0" styleClass="order_top_menu_container">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/backArrow.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="order_top_menu_container" text="Order" wrappingWidth="258.21630859375" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="35.0" prefHeight="74.0" prefWidth="390.0" spacing="12.0">
+         <children>
+            <Button fx:id="category_coffee_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="79.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Coffee" />
+            <Button fx:id="category_smoothie_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Smoothie" />
+            <Button fx:id="category_ade_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Ade" />
+            <Button fx:id="category_Dessert_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Dessert" />
+         </children>
+      </HBox>
+      <Label layoutX="21.0" layoutY="109.0" prefHeight="17.0" prefWidth="70.0" styleClass="order_container" text="items" />
+      <VBox layoutX="21.0" layoutY="142.0" prefHeight="136.0" prefWidth="100.0" stylesheets="@../../../../Styles/order.css">
+         <children>
+            <Circle fx:id="category_circle_one" fill="#f8de74" radius="50.0" stroke="#f8de74" strokeType="INSIDE" strokeWidth="3.0" />
+            <Label fx:id="category_menu_name_one" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" styleClass="order_menu_choice_container" stylesheets="@../../../../Styles/order.css" text="Americano" />
+            <Label fx:id="category_menu_price_one" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" styleClass="order_menu_choice_container" stylesheets="@../../../../Styles/order.css" text="0" />
+         </children>
+      </VBox>
+      <VBox layoutX="149.0" layoutY="142.0" prefHeight="136.0" prefWidth="100.0" stylesheets="@../../../../Styles/order.css">
+         <children>
+            <Circle fx:id="category_circle_two" fill="#f8de74" radius="50.0" stroke="#f8de74" strokeType="INSIDE" strokeWidth="3.0" />
+            <Label fx:id="category_menu_name_two" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" text="Latte" />
+            <Label fx:id="category_menu_price_two" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" text="0" />
+         </children>
+      </VBox>
+      <VBox layoutX="280.0" layoutY="142.0" prefHeight="136.0" prefWidth="100.0" stylesheets="@../../../../Styles/order.css">
+         <children>
+            <Circle fx:id="category_circle_three" fill="#f8de74" radius="50.0" stroke="#f8de74" strokeType="INSIDE" strokeWidth="3.0" />
+            <Label fx:id="category_menu_name_three" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" text="Americano" />
+            <Label fx:id="category_menu_price_three" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" text="0" />
+         </children>
+      </VBox>
+      <VBox fx:id="vboxHideTest" layoutX="21.0" layoutY="287.0" prefHeight="136.0" prefWidth="100.0" stylesheets="@../../../../Styles/order.css">
+         <children>
+            <Circle fx:id="category_circle_four" fill="#f8de74" radius="50.0" stroke="#f8de74" strokeType="INSIDE" strokeWidth="3.0" />
+            <Label fx:id="category_menu_name_four" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" styleClass="order_menu_choice_container" stylesheets="@../../../../Styles/order.css" text="Americano" />
+            <Label fx:id="category_menu_price_four" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="106.0" styleClass="order_menu_choice_container" stylesheets="@../../../../Styles/order.css" text="0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
