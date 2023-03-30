@@ -20,6 +20,11 @@ public class LoginController implements Initializable {
     @FXML
     PasswordField reg_pwd;
     private ILoginService service;
+    private Parent Register1;
+
+    public void setRegister1(Parent register) {
+        Register1 = register;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -32,15 +37,15 @@ public class LoginController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Register.fxml"));
         Parent Register = null;
         try {
-            Register = loader.load();
+            Register1 = loader.load();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         RegisterController regCon = loader.getController();
-//      regCon.setRegFrom(Register);
+        regCon.setRegister(Register1);
 
-        Scene scene = new Scene(Register);
+        Scene scene = new Scene(Register1);
         regStage.setTitle("회원가입 화면");
         regStage.setScene(scene);
         regStage.show();
