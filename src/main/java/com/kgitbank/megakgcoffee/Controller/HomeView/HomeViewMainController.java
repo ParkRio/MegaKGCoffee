@@ -36,7 +36,7 @@ public class HomeViewMainController implements Initializable {
 
     @FXML
     private void handleLoginBtn(ActionEvent event) {
-        factory.LoginOpenProc();
+        factory.LoginOpen();
         service.LoginButtonClick(homeview_loginBtn);
     }
 
