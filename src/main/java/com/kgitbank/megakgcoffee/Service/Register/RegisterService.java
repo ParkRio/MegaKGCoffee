@@ -1,4 +1,7 @@
 package com.kgitbank.megakgcoffee.Service.Register;
 
-public class RegisterService {
+import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
+
+public interface RegisterService {
+    void regProc(RegisterDTO registerDTO);
 }
