@@ -15,8 +15,6 @@ import javafx.scene.control.TextField;
 
 public class LoginController implements Initializable {
 
-    @FXML
-    private Button register_button;
     @FXML TextField reg_id;
     @FXML PasswordField reg_pwd;
     private LoginService service;
@@ -28,22 +26,12 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        service = new LoginService();
         opener = new Opener();
-    }
-    // 로그인 버튼
-    public void loginProc(){
-        service.loginProc(reg_id.getText(), reg_pwd.getText());
-        String result = service.loginCheck(reg_id.getText());
-        if(result != null && result.equals("Y")) {
-            opener.menuOpen();
-        }
     }
 
     // 가입 버튼
     public void regProc(){
         opener.regOpen();
-        service.RegisterButtonClick(register_button);
     }
 
 

@@ -32,10 +32,4 @@ public class LoginService {
     public String loginCheck(String id) {
         return loginDAO.loginCheck(id);
     }
-
-    public void RegisterButtonClick(Button register_button) {
-        register_button.setOnMouseClicked(e -> {
-            System.out.println("click");
-        });
-    }
 }
