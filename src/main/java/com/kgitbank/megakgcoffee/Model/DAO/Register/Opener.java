@@ -13,7 +13,6 @@ import java.net.URL;
 
 public class Opener {
     private Stage primaryStage;
-    private Parent regForm;
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;

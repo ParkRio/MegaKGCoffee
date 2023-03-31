@@ -3,7 +3,7 @@ package com.kgitbank.megakgcoffee.Service.Register;
 import com.kgitbank.megakgcoffee.Model.DAO.Register.LoginDAO;
 import com.kgitbank.megakgcoffee.Model.DAO.Register.RegisterDAO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
-import com.kgitbank.megakgcoffee.Register;
+import javafx.stage.Stage;
 
 public class RegisterService {
     public void regProc(RegisterDTO reg) {

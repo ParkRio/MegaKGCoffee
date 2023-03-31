@@ -6,24 +6,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.RegisterController">
+<VBox fx:id="backPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.RegisterController">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/back.png" />
-               </image>
-            </ImageView>
             <Label text="회원가입">
                <HBox.margin>
-                  <Insets left="65.0" />
+                  <Insets />
                </HBox.margin>
                <font>
                   <Font size="18.0" />
@@ -31,9 +24,20 @@
             </Label>
          </children>
       </HBox>
-      <VBox prefHeight="225.0" prefWidth="100.0">
+      <VBox prefHeight="262.5" prefWidth="100.0">
          <children>
+            <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="reg_name" prefWidth="140.0" promptText="이름" />
+               </children>
+            </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="37.5" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin>
                <children>
                   <TextField fx:id="reg_id" prefWidth="140.0" promptText="아이디" />
                   <Label text="중복확인">
@@ -42,9 +46,6 @@
                      </padding>
                   </Label>
                </children>
-               <VBox.margin>
-                  <Insets right="2.0" />
-               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
@@ -54,9 +55,6 @@
                      </HBox.margin>
                   </TextField>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
@@ -65,7 +63,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <PasswordField prefWidth="140.0" promptText="비밀번호 확인" />
+                  <PasswordField fx:id="confirm" prefWidth="140.0" promptText="비밀번호 확인" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
@@ -80,10 +78,10 @@
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="135.0" prefWidth="200.0" spacing="20.0">
+      <HBox alignment="CENTER" prefHeight="97.5" prefWidth="200.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="회원가입" />
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="취소" />
+            <Button fx:id="close" mnemonicParsing="false" onAction="#regProc" prefHeight="23.0" prefWidth="65.0" text="회원가입" />
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#regCancelProc" prefHeight="23.0" prefWidth="65.0" text="취소" />
          </children>
          <padding>
             <Insets bottom="50.0" />

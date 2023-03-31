@@ -55,7 +55,7 @@
       </HBox>
       <VBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="100.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="70.0" text="Login">
+            <Button mnemonicParsing="false" onAction="#loginProc" prefHeight="23.0" prefWidth="70.0" text="Login">
                <font>
                   <Font size="13.0" />
                </font>

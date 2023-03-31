@@ -26,13 +26,19 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        opener = new Opener();
+        service = new LoginService();
+    }
+
+    public void loginProc(){
+        service.loginProc(reg_id.getText(), reg_pwd.getText());
+        String result = service.loginCheck(reg_id.getText());
+        if(result != null && result.equals("Y")) {
+            opener.menuOpen();
+        }
     }
 
     // 가입 버튼
     public void regProc(){
         opener.regOpen();
     }
-
-
 }
