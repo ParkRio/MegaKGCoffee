@@ -1,7 +1,9 @@
 package com.kgitbank.megakgcoffee.Controller.Payment;
 
+import com.kgitbank.megakgcoffee.Model.DAO.Payment.IPaymentDAO;
+import com.kgitbank.megakgcoffee.Model.DAO.Payment.PaymentDAOFactory;
+import com.kgitbank.megakgcoffee.Model.DTO.Payment.PaymentDTO;
 import com.kgitbank.megakgcoffee.Service.Payment.PaymentService;
-import com.kgitbank.megakgcoffee.Service.Payment.PaymentServiceFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,54 +14,76 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
-import java.io.IOException;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PaymentController implements Initializable {
 
-    @FXML TextField paymentReg_style; // 결제 수단
-    @FXML TextField paymentReg_comment; // 매장 요청사항
-    @FXML TextField payment_CashReceipts; // 현금 영수증
+    private Parent PaymentForm;
+    private PaymentDAOFactory paymentDAOFactory;
+
+    IPaymentDAO iPaymentDAO = new IPaymentDAO();
+    PaymentDTO paymentDTO = new PaymentDTO();
+
+    @FXML
+    TextField payment_comment;
 
 
-    @FXML Button payment_button; // 주문하기 버튼
+
+    @FXML private Button payment_button; // 주문하기 버튼
+
+    public String menu_count = "예시) 1개";
+
+//    @FXML public Label menu_count; // 메뉴 수량
+
+    @FXML public TextField paymentReg_style; // 결제 수단
+    @FXML public TextField paymentReg_comment; // 매장 요청사항
+    @FXML public TextField payment_CashReceipts; // 현금 영수증
 
     private PaymentService paymentService;
     private Stage primaryStage;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        paymentService = PaymentServiceFactory.getPaymentService();
+        paymentService = new PaymentService() {
+            @Override
+            public void payment(String paymentReg_style, String paymentReg_comment, String payment_CashReceipts) {
+
+            }
+
+            @Override
+            public void payment(int paymentReg_sysdate, String paymentReg_style, String paymentReg_comment, String payment_CashReceipts) {
+
+            }
+        };
+        paymentDAOFactory = new PaymentDAOFactory();
+
     }
 
-    // 주문하기 버튼
-    public void paymentMouseClicked(MouseEvent event) {
+    public void setService(Parent paymentForm) {
 
-        // 주문하기 화면의 Stage에 Payment2.fxml 화면을 실행.
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment2.fxml"));
-        Parent paymentForm = null;
-        System.setOut(getClass().getResource());
-
-        try {
-            paymentForm = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Scene scene = new Scene(paymentForm);
-        primaryStage.setTitle("결제하기");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        PaymentForm = paymentForm;
     }
+
+    public void setFactory(PaymentDAOFactory paymentFactory) {
+        this.paymentDAOFactory = paymentFactory;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 //    @FXML
-//    public void paymentMouseClicked(MouseEvent event) {
-//        paymentService.payment(paymentReg_style.getText(), paymentReg_comment.getText()
-//        , payment_CashReceipts.getText());
+//    public void handlePaymentBtn(ActionEvent event) {
+////        paymentDAOFactory.PaymentProc();
+////        paymentService.PaymentButtonClick(payment_button);
 //    }
 }
