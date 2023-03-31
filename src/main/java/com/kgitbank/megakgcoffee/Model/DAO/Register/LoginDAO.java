@@ -51,7 +51,7 @@ public class LoginDAO {
     }
 
     public String loginCheck(String id) {
-        String sql = "SELECT reg_login FROM tb_register WHERE id=?";
+        String sql = "SELECT reg_login FROM tb_register WHERE reg_id=?";
         PreparedStatement ps = null;
         ResultSet rs = null;
         String regLogin = null;

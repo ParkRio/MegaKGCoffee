@@ -35,20 +35,16 @@ public class Opener {
 
     // 메뉴 화면 실행
     public void menuOpen() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-        Parent menuForm = null;
-
+        Stage regStage = new Stage();
         try {
-            menuForm = loader.load();
-        } catch (IOException e) {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/HomeView_home.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
+            Scene scene = new Scene(fxmlLoader.load());
+            regStage.setTitle("메인 화면");
+            regStage.setScene(scene);
+            regStage.show();
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        Scene scene = new Scene(menuForm);
-        primaryStage.setTitle("메인 화면");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        }        
     }
-
-
 }

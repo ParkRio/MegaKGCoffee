@@ -40,7 +40,7 @@
                </VBox.margin>
                <children>
                   <TextField fx:id="reg_id" prefWidth="140.0" promptText="아이디" />
-                  <Label text="중복확인">
+                  <Label fx:id="check" text="중복확인">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
