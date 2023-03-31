@@ -42,7 +42,7 @@ public class PaymentController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment2.fxml"));
         Parent paymentForm = null;
-        System.setOut(getClass().getResource());
+//        System.setOut(getClass().getResource());
 
         try {
             paymentForm = loader.load();

@@ -11,8 +11,6 @@ import java.sql.SQLException;
 
 public class HomeViewDAO {
 
-//데이터베이스 송신
-
     private ConnectionMaker connectionMaker = ConnectionFactory.getOracleInstance();
     Connection connection;
 
