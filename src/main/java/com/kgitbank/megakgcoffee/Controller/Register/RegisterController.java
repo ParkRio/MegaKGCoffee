@@ -55,10 +55,10 @@ public class RegisterController implements Initializable {
 
         service.regProc(reg);
 
-        CommonService.msg("회원가입이 완료되었습니다.");
+//        CommonService.msg("회원가입이 완료되었습니다.");
 
-        Stage stage = (Stage)close.getScene().getWindow();
-        stage.close();
+//        Stage stage = (Stage)close.getScene().getWindow();
+//        stage.close();
 
     }
 
