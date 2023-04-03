@@ -63,14 +63,14 @@ public class IPaymentDAO implements PaymentDAO{
 
 //        String insertSQL = "INSERT INTO payment_view(payment_seq, paymentReg_style, paymentReg_comment, payment_CashReceipts)" +
 //                " VALUES (payment_view.NEXTVAL, ?, ?, ?)";
-        String insertSQL = "INSERT INTO payment_view(payment_seq, payment_comment)" +
-                " VALUES (payment_view.NEXTVAL, ?)";
+        String insertSQL = "INSERT INTO payment_view(payment_seq, payment_comment, payment_cashReceipts)" +
+                " VALUES (payment_view.NEXTVAL, ?, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(insertSQL);
-            ps.setInt(1, 2);
+            ps.setInt(1, 1);
 //            ps.setString(2, PaymentDTO.getPaymentReg_style());
             ps.setString(2, PaymentDTO.getPayment_comment());
-//            ps.setString(5, PaymentDTO.getPayment_CashReceipts());
+            ps.setString(3, PaymentDTO.getPayment_cashReceipts());
 
             ps.executeUpdate();
 

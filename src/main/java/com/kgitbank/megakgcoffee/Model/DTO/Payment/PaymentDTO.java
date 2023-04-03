@@ -14,22 +14,25 @@ public class PaymentDTO {
 
     private int payment_seq;   // 결제 식별번호
     private int paymentReg_seq;   // 회원 식별번호
-    private String paymentReg_style;   //  결제 수단
+    private String payment_style;   //  결제 수단
     private String payment_comment;   //  매장 요청사항
-    private String payment_CashReceipts;   //  현금 영수증
+    private String payment_cashReceipts;   //  현금 영수증
+
+
+
+
+
 
     //    private int paymentReg_sysdate;   // 결제 날짜
 
 
-
+    public int getPayment_seq()  { return paymentReg_seq; }
     public void setPayment_seq(int payment_seq) {
         this.payment_seq = payment_seq;
     }
-
     public int getPaymentReg_seq() {
         return paymentReg_seq;
     }
-
     public void setPaymentReg_seq(int paymentReg_seq) {
         this.paymentReg_seq = paymentReg_seq;
     }
@@ -38,21 +41,19 @@ public class PaymentDTO {
 //        this.paymentReg_sysdate = paymentReg_sysdate;
 //    }
 
-    public void setPaymentReg_style(String paymentReg_style) {
-        this.paymentReg_style = paymentReg_style;
+    public void setPayment_style(String payment_style) {
+        this.payment_style = payment_style;
     }
 
-    public void setPayment_CashReceipts(String payment_CashReceipts) {
-        this.payment_CashReceipts = payment_CashReceipts;
-    }
-
-    public String getPayment_CashReceipts() { return payment_CashReceipts; }
+    public String getPayment_cashReceipts() { return payment_cashReceipts; }
 
     public void  setPayment_comment(String payment_comment){
         this.payment_comment = payment_comment;
     }
 
     public String getPayment_comment() { return payment_comment; }
+
+    public void setPayment_cashReceipts(String Payment_cashReceipts) { this.payment_comment = Payment_cashReceipts; }
 
 //    public static PaymentDTO paymentUser(int paymentReg_sysdate, String paymentReg_style, String paymentReg_comment, String payment_CashReceipts) {
 //        return new PaymentDTO(paymentReg_sysdate, paymentReg_style, paymentReg_comment, payment_CashReceipts);

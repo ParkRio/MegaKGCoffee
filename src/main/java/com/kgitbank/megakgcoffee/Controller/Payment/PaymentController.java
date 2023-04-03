@@ -70,20 +70,4 @@ public class PaymentController implements Initializable {
         this.paymentDAOFactory = paymentFactory;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-//    @FXML
-//    public void handlePaymentBtn(ActionEvent event) {
-////        paymentDAOFactory.PaymentProc();
-////        paymentService.PaymentButtonClick(payment_button);
-//    }
 }

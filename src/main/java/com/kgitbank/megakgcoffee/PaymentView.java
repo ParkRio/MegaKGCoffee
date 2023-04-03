@@ -18,7 +18,9 @@ import java.net.URL;
 
 public class PaymentView extends Application {
     @FXML
-    TextField payment_comment;
+    TextField payment_comment; // 매장 요청사항
+    @FXML
+    TextField payment_cashReceipts; // 현금영수증 - 개인소득공제용, 사업자증빙용 포함
 
     IPaymentDAO iPaymentDAO = new IPaymentDAO();
     PaymentDTO paymentDTO = new PaymentDTO();
@@ -33,7 +35,7 @@ public class PaymentView extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
         System.out.println(getClass().getResource(""));
-        Scene scene = new Scene(fxmlLoader.load(),400,500);
+        Scene scene = new Scene(fxmlLoader.load(),400,700);
         stage.setScene(scene);
         stage.setTitle("주문하기 화면");
         stage.show();
@@ -43,14 +45,24 @@ public class PaymentView extends Application {
         launch(args);
     }
 
+    // 주문하기 버튼 클릭 메소드
     @FXML
     public void paymentClicked(MouseEvent mouseEvent) {
         Stage PaymentStage = new Stage();  // 홈 화면
 
-        // 주문하기 버튼
-
+        // paymentDTO에 inserrt 할거 적은 것들
         paymentDTO.setPayment_comment(payment_comment.getText());
         iPaymentDAO.insert(paymentDTO);
+
+        paymentDTO.setPayment_cashReceipts(payment_cashReceipts.getText());
+        iPaymentDAO.insert(paymentDTO);
+
+
+
+
+
+
+
         try {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Payment2.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
