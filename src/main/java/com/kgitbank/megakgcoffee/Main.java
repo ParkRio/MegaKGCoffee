@@ -61,22 +61,22 @@ public class Main extends Application {
 //        stage.show();
 
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/Orders.fxml"));
-//        Parent orderForm = fxmlLoader.load();
-//
-//        Opener opener = new Opener();
-//        opener.setPrimaryStage(stage);
-//
-////        CartController cartController = fxmlLoader.getController();
-////        cartController.setOpener(opener);
-//
-//        OrdersController ordersController = fxmlLoader.getController();
-//        ordersController.setOpener(opener);
-//
-//        Scene scene = new Scene(orderForm);
-//        stage.setTitle("Order Page");
-//        stage.setScene(scene);
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/Orders.fxml"));
+        Parent orderForm = fxmlLoader.load();
+
+        Opener opener = new Opener();
+        opener.setPrimaryStage(stage);
+
+//        CartController cartController = fxmlLoader.getController();
+//        cartController.setOpener(opener);
+
+        OrdersController ordersController = fxmlLoader.getController();
+        ordersController.setOpener(opener);
+
+        Scene scene = new Scene(orderForm);
+        stage.setTitle("Order Page");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {

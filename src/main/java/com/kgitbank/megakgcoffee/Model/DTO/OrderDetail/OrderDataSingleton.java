@@ -14,7 +14,7 @@ public class OrderDataSingleton {
 
     private ArrayList<CartDTO> arrayList; // 장바구니에서 결제화면으로 데이터 넘김
     
-    private int checkOrder; // 장바구니에 들어왔을 떄 바로주문인지 장바구니 주문인지 확인
+    private int checkOrder; // 결제화면에 들어왔을 떄 바로주문인지 장바구니 주문인지 확인
 
     private int reg_seq; // 회원 PK 값
 

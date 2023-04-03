@@ -28,6 +28,9 @@ module com.kgitbank.megakgcoffee {
     opens com.kgitbank.megakgcoffee.Controller.OrderDetail to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Controller.OrderDetail;
 
+    opens com.kgitbank.megakgcoffee.Model.DTO.Cart to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Model.DTO.Cart;
+
     opens com.kgitbank.megakgcoffee.Controller.HomeView to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Model.DAO.HomeView;
     opens com.kgitbank.megakgcoffee.Model.DAO.HomeView to javafx.fxml;

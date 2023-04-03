@@ -68,7 +68,6 @@ public class OrderDetailController implements Initializable {
         cnt++; menu_count.setText(String.valueOf(cnt));
         menu_price.setText(String.valueOf(price*cnt));
         total_price = price*cnt;
-        System.out.println(total_price);
     }
 
     public void minus_count_button(MouseEvent mouseEvent) {

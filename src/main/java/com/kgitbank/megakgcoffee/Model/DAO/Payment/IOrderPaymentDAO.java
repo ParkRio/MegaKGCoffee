@@ -5,6 +5,8 @@ import com.kgitbank.megakgcoffee.Connection.ConnectionMaker;
 import com.kgitbank.megakgcoffee.Model.DTO.Cart.CartDTO;
 import com.kgitbank.megakgcoffee.Model.DTO.Payment.CartPaymentDTO;
 import com.kgitbank.megakgcoffee.Model.DTO.Payment.FindOrderPaymentDTO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,9 +65,9 @@ public class IOrderPaymentDAO implements OrderPaymentDAO{
     }
 
     @Override
-    public CartPaymentDTO AllByCartOrder(ArrayList<CartDTO> cartDTOArrayList, int checkReg_seq) {
+    public ObservableList<CartPaymentDTO> AllByCartOrder(ArrayList<CartDTO> cartDTOArrayList, int checkReg_seq) {
 
-        CartPaymentDTO cartPaymentDTO = new CartPaymentDTO();
+        ObservableList<CartPaymentDTO> observableCartPaymentDTO = FXCollections.observableArrayList();
 
         String AllByCartOrderSQL = "SELECT check_seq, menu_name, menu_img, item_count, item_price, menu_price, checkOrder"
                 + " FROM tb_orderItem O INNER JOIN tb_orderCheck C ON O.item_seq = C.checkItem_seq AND checkOrder = 0"
@@ -77,15 +79,65 @@ public class IOrderPaymentDAO implements OrderPaymentDAO{
                 ps.setInt(1, cartDTO.getCheck_seq());
                 ResultSet rs = ps.executeQuery();
                 while(rs.next()) {
-                    cartPaymentDTO.setItem_count(rs.getInt("item_count"));
-                    cartPaymentDTO.setItem_price(rs.getInt("item_price"));
+                            observableCartPaymentDTO.add(new CartPaymentDTO(
+                                    rs.getString("menu_img"),
+                                    rs.getString("menu_name"),
+                                    rs.getInt("menu_price"),
+                                    rs.getInt("item_count"),
+                                    rs.getInt("item_price")
+                            ));
                 }
+                rs.close();
+                ps.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
-        return cartPaymentDTO;
+        return observableCartPaymentDTO;
+    }
+
+    @Override
+    public void updateOrderNow(int order_item_seq, int checkReg_seq) {
+
+        System.out.println(order_item_seq);
+
+        String updateOrderNowFinishSQL = "UPDATE tb_orderCheck SET checkOrder = 1"
+                + " WHERE check_seq = ? AND checkReg_seq = 1"; // todo :: 회원 테스트번호 1
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(updateOrderNowFinishSQL);
+            ps.setInt(1, order_item_seq);
+            //ps.setInt(2, checkReg_seq);
+            ps.executeUpdate();
+
+            ps.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateCartOrder(ArrayList<CartDTO> cartDTOArrayList, int checkReg_seq) {
+
+        String updateCartOrderFinishSQL = "UPDATE tb_orderCheck SET checkOrder = 1"
+                + " WHERE check_seq = ? AND checkReg_seq = 1"; // todo :: 회원 테스트번호 1
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(updateCartOrderFinishSQL);
+
+            for (CartDTO cart : cartDTOArrayList) {
+
+                ps.setInt(1, cart.getCheck_seq());
+                //ps.setInt(2, checkReg_seq);
+                ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
