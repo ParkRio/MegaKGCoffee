@@ -31,25 +31,21 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <TextField fx:id="reg_name" prefWidth="140.0" promptText="이름" />
+                  <TextField fx:id="reg_name" prefWidth="130.0" promptText="이름" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="37.5" prefWidth="200.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="37.5" prefWidth="200.0" spacing="4.0">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
                <children>
-                  <TextField fx:id="reg_id" prefWidth="140.0" promptText="아이디" />
-                  <Label fx:id="check" text="중복확인">
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </Label>
+                  <TextField fx:id="reg_id" prefWidth="130.0" promptText="아이디" />
+                  <Button mnemonicParsing="false" prefWidth="55.0" text="CHK" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <TextField fx:id="reg_nick" prefWidth="140.0" promptText="닉네임">
+                  <TextField fx:id="reg_nick" prefWidth="130.0" promptText="닉네임">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -58,22 +54,22 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <PasswordField fx:id="reg_pwd" prefWidth="140.0" promptText="비밀번호" />
+                  <PasswordField fx:id="reg_pwd" prefWidth="130.0" promptText="비밀번호" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <PasswordField fx:id="confirm" prefWidth="140.0" promptText="비밀번호 확인" />
+                  <PasswordField fx:id="confirm" prefWidth="130.0" promptText="비밀번호 확인" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <TextField fx:id="reg_tel" prefWidth="140.0" promptText="전화번호" />
+                  <TextField fx:id="reg_tel" prefWidth="130.0" promptText="전화번호" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">
                <children>
-                  <DatePicker fx:id="reg_birth" prefWidth="140.0" promptText="생년월일" />
+                  <DatePicker fx:id="reg_birth" prefWidth="130.0" promptText="생년월일" />
                </children>
             </HBox>
          </children>
