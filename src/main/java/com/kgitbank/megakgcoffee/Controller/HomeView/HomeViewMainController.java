@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,25 +20,19 @@ public class HomeViewMainController implements Initializable {
     private Opener opener;
     private Parent HomeForm;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        service = new HomeViewMainService();
-
-
-    }
-
     public void setOpener(Opener opener) {
         this.opener = opener;
     }
 
-    @FXML
-    private void handleLoginBtn(ActionEvent event) {
-        opener.LoginOpen();
-//        service.LoginButtonClick(homeview_loginBtn);
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        service = new HomeViewMainService();
     }
 
-
-
+    @FXML
+    private void handleLoginBtn(ActionEvent event) {
+        Stage stage = (Stage) homeview_loginBtn.getScene().getWindow();
+        opener.BeforeLoginOpen(stage);
+    }
 }
 

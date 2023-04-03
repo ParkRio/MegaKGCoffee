@@ -2,6 +2,7 @@ package com.kgitbank.megakgcoffee.Model.DAO.Register;
 
 import com.kgitbank.megakgcoffee.Connection.ConnectionFactory;
 import com.kgitbank.megakgcoffee.Connection.ConnectionMaker;
+import com.kgitbank.megakgcoffee.Model.DTO.Register.ResponseRegDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -66,6 +67,33 @@ public class LoginDAO {
             e.printStackTrace();
         }
         return regLogin;
+    }
+
+    public ResponseRegDTO registerInfo(String id, String pw) {
+
+        ResponseRegDTO responseRegDTO = null;
+
+        String registerInfoSQL = "SELECT reg_seq, reg_name, reg_id, reg_nick FROM tb_register"
+                + " WHERE reg_id = ? AND reg_pwd = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(registerInfoSQL);
+            ps.setString(1, id);
+            ps.setString(2, pw);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                 responseRegDTO = new ResponseRegDTO(
+                        rs.getInt("reg_seq"),
+                        rs.getString("reg_name"),
+                        rs.getString("reg_id"),
+                        rs.getString("reg_nick")
+                );
+            }
+            rs.close();
+            ps.close();
+            return responseRegDTO;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

@@ -18,6 +18,8 @@ public class OrderDataSingleton {
 
     private int reg_seq; // 회원 PK 값
 
+    private String reg_name; // 회원 이름 정보
+
     private OrderDataSingleton(){}
 
     public static OrderDataSingleton getInstance(){
@@ -62,5 +64,13 @@ public class OrderDataSingleton {
 
     public void setReg_seq(int reg_seq) {
         this.reg_seq = reg_seq;
+    }
+
+    public String getReg_name() {
+        return reg_name;
+    }
+
+    public void setReg_name(String reg_name) {
+        this.reg_name = reg_name;
     }
 }
