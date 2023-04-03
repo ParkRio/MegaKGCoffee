@@ -24,7 +24,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("Fxml/Login.fxml"));
 //        Parent loginForm = loader.load();
 //
 //        Opener opener = new Opener();
@@ -38,22 +38,21 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main2.fxml"));
-//        Parent mainForm = fxmlLoader.load();
-//
-//        HomeViewOpenerFactory opener = new HomeViewOpenerFactory();
-//        opener.setPrimaryStage(stage);
-//
-//        HomeViewMainController mainController = fxmlLoader.getController();
-//        mainController.setOpenerFactory(opener);
-//
-////        HomeViewHomeController homeController = fxmlLoader.getController();
-////        homeController.setOpenerFactory(opener);
-//
-//        Scene scene = new Scene(mainForm);
-//        stage.setScene(scene);
-//        stage.setTitle("Connection Test");
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main2.fxml"));
+        Parent mainForm = fxmlLoader.load();
+
+        Opener opener = new Opener();
+        opener.setPrimaryStage(stage);
+
+        HomeViewMainController mainController = fxmlLoader.getController();
+        mainController.setOpener(opener);
+
+        Scene scene = new Scene(mainForm);
+        stage.setScene(scene);
+        stage.setTitle("Connection Test");
+        stage.show();
+
+
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Test.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(),500,500);
 //        stage.setScene(scene);
