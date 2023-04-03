@@ -1,0 +1,28 @@
+.loginView_container {
+    -fx-background-color: white;
+}
+
+.loginView_container Button {
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1.5px;
+}
+
+.loginView_container Button:hover {
+    -fx-border-color: gold;
+}
+
+.loginView_container Button:pressed {
+    -fx-border-color: green;
+}
+
+.loginView_container TextField {
+    -fx-border-color: black;
+    -fx-border-radius: 5px;
+}
+
+.loginView_container PasswordField {
+    -fx-border-color: black;
+    -fx-border-radius: 5px;
+}

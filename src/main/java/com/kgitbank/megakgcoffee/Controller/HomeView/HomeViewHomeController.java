@@ -1,5 +1,6 @@
 package com.kgitbank.megakgcoffee.Controller.HomeView;
 
+import com.kgitbank.megakgcoffee.Model.DTO.OrderDetail.OrderDataSingleton;
 import com.kgitbank.megakgcoffee.Opener.Opener;
 
 import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewHomeService;
@@ -28,6 +29,8 @@ public class HomeViewHomeController implements Initializable {
 
     private Stage stage;
 
+    OrderDataSingleton orderDataSingleton = OrderDataSingleton.getInstance();
+
     public void setStage(Stage stage) {
         System.out.println(stage);
         this.stage = stage;
@@ -50,7 +53,8 @@ public class HomeViewHomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         homeService = new HomeViewHomeService();
-        homeService.NickName(nickLabel);
+        nickLabel.setText(orderDataSingleton.getReg_name());
+        //homeService.NickName(nickLabel);
     }
 
 

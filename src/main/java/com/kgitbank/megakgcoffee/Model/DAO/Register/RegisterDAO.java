@@ -2,10 +2,12 @@ package com.kgitbank.megakgcoffee.Model.DAO.Register;
 
 import com.kgitbank.megakgcoffee.Connection.ConnectionFactory;
 import com.kgitbank.megakgcoffee.Connection.ConnectionMaker;
+import com.kgitbank.megakgcoffee.Model.DTO.HomeView.HomeViewDTO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RegisterDAO {
@@ -36,4 +38,26 @@ public class RegisterDAO {
             e.printStackTrace();
         }
     }
+    public String Nickname(RegisterDTO registerDTO) {
+
+        String NicknameSQL = "SELECT reg_nick FROM tb_register where reg_id = ?";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String reg_nick = null;
+        try {
+            ps= connection.prepareStatement(NicknameSQL);
+//            System.out.println("쿼리문 : "+registerDTO.getReg_nick());
+            ps.setString(1, registerDTO.getReg_id());
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                reg_nick = rs.getString("reg_nick");
+            }
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return reg_nick;
+    }
+
+
 }
