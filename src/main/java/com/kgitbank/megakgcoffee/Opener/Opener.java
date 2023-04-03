@@ -36,7 +36,7 @@ public class Opener {
             loginCon.setOpener(opener);
             logStage.setTitle("로그인 화면");
             logStage.setScene(scene);
-            logStage.show();;
+            logStage.show();
         }catch (Exception e){
             e.printStackTrace();;
         }
