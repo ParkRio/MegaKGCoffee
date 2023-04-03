@@ -25,7 +25,7 @@
          <children>
             <Button fx:id="homeBtn" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" text="Home" />
             <Button fx:id="menuBtn" layoutX="222.0" layoutY="3.0" mnemonicParsing="false" text="三" />
-            <Button fx:id="coffeeBtn" layoutY="3.0" mnemonicParsing="false" text="Coffee" />
+            <Button fx:id="coffeeBtn" layoutY="3.0" mnemonicParsing="false" onAction="#handleCoffeeButton" text="Coffee" />
          </children></AnchorPane>
    </bottom>
 </BorderPane>

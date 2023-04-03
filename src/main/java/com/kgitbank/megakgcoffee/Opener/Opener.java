@@ -1,5 +1,7 @@
 package com.kgitbank.megakgcoffee.Opener;
 
+import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController;
+import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
 import com.kgitbank.megakgcoffee.Controller.OrderDetail.OrderDetailController;
 import com.kgitbank.megakgcoffee.Controller.Orders.OrdersController;
 import com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController;
@@ -140,6 +142,71 @@ public class Opener {
             stage.show();
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    ///////////////////////////////////////////////////////Home View /////////////////////////////////////
+    public void LoginOpen(Stage stage) { //로그인 버튼 눌르면 // 로그인 창으로 이동 // 지금은 홈으로 이동 되게끔
+//        main.
+        //같은 창에서 fxml만 교체해서 열어야함.
+        try {
+            URL homePath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_home.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(homePath);
+            Parent homeform = fxmlLoader.load();
+
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            HomeViewHomeController homeViewHomeController = fxmlLoader.getController();
+            homeViewHomeController.setOpener(opener);
+            homeViewHomeController.setStage(stage);
+            Scene scene = new Scene(homeform);
+            primaryStage.setTitle("main page");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public void BackButton(Stage stage) {
+        try {
+            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_main2.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(backPath);
+            Parent backForm = fxmlLoader.load();
+
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            HomeViewMainController mainController = fxmlLoader.getController();
+            mainController.setOpener(opener);
+
+            Scene backScene = new Scene(backForm);
+            stage.setTitle("test");
+            stage.setScene(backScene);
+            stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void CoffeeButton(Stage stage){
+        try {
+
+            // coffe 화면으로 fxml 주소 변경해야함
+            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_main.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(backPath);
+            Parent coffeeForm = fxmlLoader.load();
+
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            HomeViewMainController mainController = fxmlLoader.getController();
+            mainController.setOpener(opener);
+
+            Scene backScene = new Scene(coffeeForm);
+            stage.setTitle("test");
+            stage.setScene(backScene);
+            stage.show();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

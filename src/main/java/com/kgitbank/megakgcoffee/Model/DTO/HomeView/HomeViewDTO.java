@@ -16,9 +16,19 @@ public class HomeViewDTO {
     private Stage backStage;
     private Path backPath;
     private Parent parent;
+
+    public String getTestId() {
+        return testId;
+    }
+
+    public void setTestId(String testId) {
+        this.testId = testId;
+    }
+
     private Scene backScene;
     private Button button;
     private URL url;
+    private String testId;
 
 
     public Parent getParent() {

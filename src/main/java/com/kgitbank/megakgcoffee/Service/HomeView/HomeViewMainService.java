@@ -2,23 +2,18 @@ package com.kgitbank.megakgcoffee.Service.HomeView;
 
 import com.kgitbank.megakgcoffee.Model.DAO.HomeView.HomeViewDAO;
 import com.kgitbank.megakgcoffee.Model.DTO.HomeView.HomeViewDTO;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Path;
-import javafx.stage.Stage;
 
-import java.io.File;
 import java.net.URL;
 
-public class HomeViewService {
+public class HomeViewMainService {
 
     private HomeViewDAO homeViewDAO;
 
-    public HomeViewService() {
+    public HomeViewMainService() {
         homeViewDAO = new HomeViewDAO();
 
     }

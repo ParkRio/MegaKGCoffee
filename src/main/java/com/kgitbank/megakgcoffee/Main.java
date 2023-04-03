@@ -37,29 +37,25 @@ public class Main extends Application {
 //        stage.setTitle("로그인 화면");
 //        stage.setScene(scene);
 //        stage.show();
+//////////////////////////////Home view
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main2.fxml"));
+        Parent mainForm = fxmlLoader.load();
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main2.fxml"));
-//        Parent mainForm = fxmlLoader.load();
-//
-//        HomeViewOpenerFactory opener = new HomeViewOpenerFactory();
-//        opener.setPrimaryStage(stage);
-//
-//        HomeViewMainController mainController = fxmlLoader.getController();
-//        mainController.setOpenerFactory(opener);
-//
-////        HomeViewHomeController homeController = fxmlLoader.getController();
-////        homeController.setOpenerFactory(opener);
-//
-//        Scene scene = new Scene(mainForm);
-//        stage.setScene(scene);
-//        stage.setTitle("Connection Test");
-//        stage.show();
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Test.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(),500,500);
-//        stage.setScene(scene);
-//        stage.setTitle("Connection Test");
-//        stage.show();
+        Opener opener = new Opener();
+        opener.setPrimaryStage(stage);
 
+        HomeViewMainController mainController = fxmlLoader.getController();
+        mainController.setOpener(opener);
+
+//        HomeViewHomeController homeController = fxmlLoader.getController();
+//        homeController.setOpenerFactory(opener);
+
+        Scene scene = new Scene(mainForm);
+        stage.setScene(scene);
+        stage.setTitle("Connection Test");
+        stage.show();
+
+////////////////////////////////////////
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/Orders.fxml"));
 //        Parent orderForm = fxmlLoader.load();

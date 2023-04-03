@@ -7,6 +7,7 @@ import com.kgitbank.megakgcoffee.Model.DTO.Test.TestDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class HomeViewDAO {
@@ -27,18 +28,23 @@ public class HomeViewDAO {
 
 
 
-//    public void insert(HomeViewDTO homeViewDTO) {
-//
-//        String insertSQL = "INSERT INTO test_tb_Coffee(test_seq, test_id, test_password)" +
-//                " VALUES (test_Coffee_seq.NEXTVAL,?,?)";
-//        try {
-//            PreparedStatement ps = connection.prepareStatement(insertSQL);
-//            ps.setString(1, homeViewDTO.g);
-//            ps.setString(2, homeViewDTO.getTest_password());
-//            ps.executeQuery();
-//            ps.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public String Nickname(HomeViewDTO homeViewDTO) {
+
+        String NicknameSQL = "SELECT test_id FROM test_tb_Coffee where test_id=? ";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String nick = null;
+        try {
+            ps= connection.prepareStatement(NicknameSQL);
+            ps.setString(1, homeViewDTO.getTestId());
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                nick = rs.getString("nick");
+            }
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nick;
+    }
 }
