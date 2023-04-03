@@ -1,13 +1,7 @@
 package com.kgitbank.megakgcoffee;
 
-import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController;
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
-import com.kgitbank.megakgcoffee.Model.DTO.HomeView.HomeViewDTO;
-import com.kgitbank.megakgcoffee.Openner.HomeView.HomeViewOpenerFactory;
-import com.kgitbank.megakgcoffee.Controller.Cart.CartController;
-import com.kgitbank.megakgcoffee.Controller.Orders.OrdersController;
 import com.kgitbank.megakgcoffee.Opener.Opener;
-import com.kgitbank.megakgcoffee.Controller.Register.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -60,22 +54,22 @@ public class Main extends Application {
 //        stage.show();
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/Orders.fxml"));
-        Parent orderForm = fxmlLoader.load();
-
-        Opener opener = new Opener();
-        opener.setPrimaryStage(stage);
-
-//        CartController cartController = fxmlLoader.getController();
-//        cartController.setOpener(opener);
-
-        OrdersController ordersController = fxmlLoader.getController();
-        ordersController.setOpener(opener);
-
-        Scene scene = new Scene(orderForm);
-        stage.setTitle("Order Page");
-        stage.setScene(scene);
-        stage.show();
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/Orders.fxml"));
+//        Parent orderForm = fxmlLoader.load();
+//
+//        Opener opener = new Opener();
+//        opener.setPrimaryStage(stage);
+//
+////        CartController cartController = fxmlLoader.getController();
+////        cartController.setOpener(opener);
+//
+//        OrdersController ordersController = fxmlLoader.getController();
+//        ordersController.setOpener(opener);
+//
+//        Scene scene = new Scene(orderForm);
+//        stage.setTitle("Order Page");
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     public static void main(String[] args) {
