@@ -3,6 +3,9 @@ package com.kgitbank.megakgcoffee.Controller.HomeView;
 import com.kgitbank.megakgcoffee.Opener.Opener;
 
 import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewMainService;
+import com.kgitbank.megakgcoffee.Opener.Opener;
+import com.kgitbank.megakgcoffee.Openner.HomeView.HomeViewOpenerFactory;
+import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,34 +18,27 @@ import java.util.ResourceBundle;
 
 public class HomeViewMainController implements Initializable {
 
-    @FXML Button homeview_loginBtn;
-    private HomeViewMainService mainService;
-
-    private Parent HomeForm;
+    @FXML
+    private Button homeview_loginBtn;
+    private HomeViewService service;
     private Opener opener;
-    private Stage stage;
-
-    public Opener getOpener() { return opener; }
-
-
-    public void setOpener(Opener opener) { this.opener = opener; }
+    private Parent HomeForm;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        mainService = new HomeViewMainService();
+        service = new HomeViewService();
 
 
     }
 
-
-
-
+    public void setOpener(Opener opener) {
+        this.opener = opener;
+    }
 
     @FXML
     private void handleLoginBtn(ActionEvent event) {
-
-        opener.LoginOpen(stage);
-//        mainService.LoginButtonClick(homeview_loginBtn);
+        opener.LoginOpen();
+//        service.LoginButtonClick(homeview_loginBtn);
 
     }
 

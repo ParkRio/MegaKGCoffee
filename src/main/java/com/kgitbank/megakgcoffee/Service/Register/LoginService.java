@@ -23,6 +23,7 @@ public class LoginService {
         }
 
         if(dbPw.equals(reg_pwd)) {
+            CommonService.msg("로그인 되었습니다.");
             loginDAO.loginSuccess(reg_id);
         }else {
             CommonService.msg("로그인 실패");
