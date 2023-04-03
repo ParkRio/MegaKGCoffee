@@ -2,6 +2,7 @@ package com.kgitbank.megakgcoffee;
 
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController;
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
+import com.kgitbank.megakgcoffee.Model.DTO.HomeView.HomeViewDTO;
 import com.kgitbank.megakgcoffee.Openner.HomeView.HomeViewOpenerFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+    HomeViewDTO dto = new HomeViewDTO();
 
 
 
