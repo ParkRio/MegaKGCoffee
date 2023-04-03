@@ -1,4 +1,4 @@
-package com.kgitbank.megakgcoffee.Register;
+package com.kgitbank.megakgcoffee;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
