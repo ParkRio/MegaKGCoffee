@@ -47,3 +47,11 @@
     -fx-font-family: 'Delicious Handrawn', cursive;
     -fx-font-family: 'Roboto', sans-serif;
 }
+
+.order_footer_container {
+    -fx-background-color: black;
+}
+
+.order_footer_container Button {
+    -fx-background-color: black;
+}

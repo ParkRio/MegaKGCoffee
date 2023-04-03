@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="555.0" prefWidth="522.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Cart.CartController">
+   <children>
+      <HBox prefHeight="41.0" prefWidth="522.0" styleClass="cart_container_hBox" stylesheets="@../../../../Styles/cart.css">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#go_to_order_cart" prefHeight="37.0" prefWidth="55.0">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="cart_table" layoutY="83.0" prefHeight="404.0" prefWidth="522.0">
+        <columns>
+            <TableColumn fx:id="order_number" prefWidth="54.0" text="ON" />
+          <TableColumn fx:id="menu_name" prefWidth="120.0" text="Menu Name" />
+          <TableColumn fx:id="total_items" prefWidth="83.0" text="Total Items" />
+            <TableColumn fx:id="price" prefWidth="77.0" text="Price" />
+            <TableColumn fx:id="delete" prefWidth="77.0" text="Delete" />
+            <TableColumn fx:id="order" prefWidth="110.0" text="Order" />
+        </columns>
+      </TableView>
+      <CheckBox fx:id="all_select" layoutX="423.0" layoutY="52.0" mnemonicParsing="false" text="Select All" />
+      <Label fx:id="how_many_cart" alignment="CENTER" layoutX="53.0" layoutY="47.0" prefHeight="25.0" prefWidth="122.0" text="Label" />
+      <Button layoutX="209.0" layoutY="502.0" mnemonicParsing="false" onAction="#cart_order_selected" prefHeight="39.0" prefWidth="104.0" text="Payment" />
+   </children>
+</AnchorPane>

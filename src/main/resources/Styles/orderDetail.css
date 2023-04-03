@@ -1,0 +1,25 @@
+.order_detail_container {
+    -fx-background-color: white;
+}
+
+.order_detail_top_vox_container {
+    -fx-background-color: white;
+}
+
+.order_detail_top_vox_container Text {
+    -fx-font-size: 2em;
+    -fx-text-alignment: center;
+}
+
+.order_detail_gridPane {
+    -fx-background-color: white;
+}
+
+.order_detail_order_button_container {
+    -fx-background-color: white;
+    -fx-border-color: black;
+}
+
+.order_detail_order_button_container Button:hover {
+    -fx-background-color: gold;
+}

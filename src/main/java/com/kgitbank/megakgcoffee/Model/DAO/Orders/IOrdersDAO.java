@@ -36,6 +36,7 @@ public class IOrdersDAO implements OrdersDAO{
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 OrdersDTO ordersDTO = new OrdersDTO(
+                        rs.getString("menu_seq"),
                         rs.getString("menu_category"),
                         rs.getString("menu_name"),
                         rs.getString("menu_img"),
@@ -44,6 +45,8 @@ public class IOrdersDAO implements OrdersDAO{
                 );
                 ordersDTOS.add(ordersDTO);
             }
+            rs.close(); // todo :: 자원반환값을 나중에 따로 메소드를 만들거나 해서 리팩토링 해보자.
+            ps.close();
             return ordersDTOS;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,6 +56,25 @@ public class IOrdersDAO implements OrdersDAO{
 
     @Override
     public int NumberOfMenusPerCategory(String category_menu) {
+
+        int count = 0;
+
+        String countMenus = "SELECT COUNT(*) dc FROM tb_menu" +
+                " WHERE menu_category = ?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(countMenus);
+            ps.setString(1, category_menu);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                count = rs.getInt("dc");
+            }
+            rs.close();
+            ps.close();
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 }

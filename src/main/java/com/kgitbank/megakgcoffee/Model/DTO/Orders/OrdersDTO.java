@@ -1,17 +1,17 @@
 package com.kgitbank.megakgcoffee.Model.DTO.Orders;
 
 public class OrdersDTO {
+    private String menu_seq;
     private String menu_category;
     private String menu_name;
     private String menu_img;
     private String menu_desc;
     private int menu_price;
 
-    private String message;
-
     public OrdersDTO(){}
 
-    public OrdersDTO(String menu_category, String menu_name, String menu_img, String menu_desc, int menu_price) {
+    public OrdersDTO(String menu_seq, String menu_category, String menu_name, String menu_img, String menu_desc, int menu_price) {
+        this.menu_seq = menu_seq;
         this.menu_category = menu_category;
         this.menu_name = menu_name;
         this.menu_img = menu_img;
@@ -39,11 +39,7 @@ public class OrdersDTO {
         return menu_price;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public String getMenu_seq() {
+        return menu_seq;
     }
 }
