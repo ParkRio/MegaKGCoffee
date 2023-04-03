@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
@@ -19,6 +20,12 @@ public class LoginController implements Initializable {
     @FXML PasswordField reg_pwd;
     private LoginService service;
     private Opener opener;
+
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     public void setOpener(Opener opener) {
         this.opener = opener;

@@ -18,10 +18,13 @@ public class HomeViewHomeService {
 
     }
 
-    public void NickName(Label nickLabel) {
+    public void NickName(Label nickLabel) {  //homeview에서 home 화면에 ㅇㅇ님 안녕하세요 변경되는 코드
         HomeViewDTO dto = new HomeViewDTO();
+        dto.setTestId("dd");
         homeViewDAO.Nickname(dto);
+
         String nick = dto.getTestId();
+        System.out.println("nick"+nick);
         nickLabel.setText(nick);
 
     }
