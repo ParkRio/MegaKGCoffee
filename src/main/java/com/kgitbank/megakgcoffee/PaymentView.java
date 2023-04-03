@@ -57,12 +57,6 @@ public class PaymentView extends Application {
         paymentDTO.setPayment_cashReceipts(payment_cashReceipts.getText());
         iPaymentDAO.insert(paymentDTO);
 
-
-
-
-
-
-
         try {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Payment2.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
