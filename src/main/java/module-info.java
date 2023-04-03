@@ -6,15 +6,17 @@ module com.kgitbank.megakgcoffee {
 
 
     opens com.kgitbank.megakgcoffee to javafx.fxml;
-    //opens com.kgitbank.megakgcoffee.Controller.Test to javafx.fxml;
-    //opens com.kgitbank.megakgcoffee.Controller.Orders to javafx.fxml;
     exports com.kgitbank.megakgcoffee;
 
     opens com.kgitbank.megakgcoffee.Controller.Test to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Controller.Test;
+
+    opens com.kgitbank.megakgcoffee.Controller.Orders to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Controller.Orders;
 
-    exports com.kgitbank.megakgcoffee.Controller.HomeView;
+    opens com.kgitbank.megakgcoffee.Controller.OrderDetail to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.OrderDetail;
+
     opens com.kgitbank.megakgcoffee.Controller.HomeView to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Model.DAO.HomeView;
     opens com.kgitbank.megakgcoffee.Model.DAO.HomeView to javafx.fxml;
@@ -24,4 +26,21 @@ module com.kgitbank.megakgcoffee {
     opens com.kgitbank.megakgcoffee.Service.HomeView to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Openner.HomeView;
     opens com.kgitbank.megakgcoffee.Openner.HomeView to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.HomeView;
+
+    opens com.kgitbank.megakgcoffee.Controller.Cart to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.Cart;
+
+    opens com.kgitbank.megakgcoffee.Controller.Payment to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.Payment;
+
+
+//    exports com.kgitbank.megakgcoffee.Model.DAO.HomeView;
+//    opens com.kgitbank.megakgcoffee.Model.DAO.HomeView to javafx.fxml;
+//
+//    exports com.kgitbank.megakgcoffee.Model.DTO.HomeView;
+//    opens com.kgitbank.megakgcoffee.Model.DTO.HomeView to javafx.fxml;
+//
+//    exports com.kgitbank.megakgcoffee.Service.HomeView;
+//    opens com.kgitbank.megakgcoffee.Service.HomeView to javafx.fxml;
 }
