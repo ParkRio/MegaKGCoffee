@@ -59,11 +59,16 @@ public class OrderPaymentController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         orderPaymentService = OrderPaymentServiceFactory.getOrderPaymentService();
         if (orderDataSingleton.getCheckOrder() == 2) { // 바로 주문에서 접근
-            findOrderNowMenu(orderDataSingleton.getOrder_item_seq(), 1); // todo :: 테스트회원 1
+            findOrderNowMenu(orderDataSingleton.getOrder_item_seq(), orderDataSingleton.getReg_seq()); // todo :: 테스트회원 1
             menu_list.setItems(items_order_now);
             payment_total_price.setText(String.valueOf(total_price));
         } else if (orderDataSingleton.getCheckOrder() == 0) { // 장바구니에서 접근
-            AllCartOrdersToPaymentList(orderDataSingleton.getArrayList(), 1); // todo :: 테스트회원 1
+
+            System.out.println("12321321321321321");
+            System.out.println(orderDataSingleton.getReg_seq());
+            System.out.println(orderDataSingleton.getArrayList().get(0).getMenu_name());
+
+            AllCartOrdersToPaymentList(orderDataSingleton.getArrayList(), orderDataSingleton.getReg_seq()); // todo :: 테스트회원 1
             menu_list.setItems(items);
             payment_total_price.setText(String.valueOf(total_price));
         }
@@ -110,6 +115,11 @@ public class OrderPaymentController implements Initializable {
     // 카트 리스트
     public void AllCartOrdersToPaymentList(ArrayList<CartDTO> cartDTOArrayList, int checkReg_seq) {
         items = orderPaymentService.AllCartItems(cartDTOArrayList, checkReg_seq);
+
+        System.out.println("======asddssaddasadasd");
+        // System.out.println(items.get(0).getMenu_name());
+        System.out.println(items.size());
+
         menu_list.setCellFactory(listView -> new ListCell<CartPaymentDTO>() {
             private ImageView imageView = new ImageView();
             @Override
