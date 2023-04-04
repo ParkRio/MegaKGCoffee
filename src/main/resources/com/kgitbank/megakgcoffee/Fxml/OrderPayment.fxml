@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="795.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController">
+<AnchorPane prefHeight="795.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController">
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="5.0" layoutY="8.0" prefHeight="35.0" prefWidth="568.0">
          <children>
@@ -50,7 +50,7 @@
       <Label layoutX="107.0" layoutY="646.0" prefHeight="24.0" prefWidth="118.0" text="총 결제금액" />
       <Label fx:id="payment_total_price" alignment="CENTER_RIGHT" layoutX="405.0" layoutY="646.0" prefHeight="24.0" prefWidth="118.0" text="총 결제금액" textFill="RED" />
       <Label alignment="CENTER_RIGHT" layoutX="513.0" layoutY="646.0" prefHeight="24.0" prefWidth="22.0" text="원" />
-      <Button layoutX="278.0" layoutY="686.0" mnemonicParsing="false" onAction="#orderProc" onMouseClicked="#finish_payment" prefHeight="45.0" prefWidth="106.0" text="Button" />
+      <Button layoutX="278.0" layoutY="686.0" mnemonicParsing="false" onMouseClicked="#finish_payment" prefHeight="45.0" prefWidth="106.0" text="Button" />
       <ListView fx:id="menu_list" layoutX="4.0" layoutY="76.0" prefHeight="315.0" prefWidth="621.0" />
    </children>
 </AnchorPane>
