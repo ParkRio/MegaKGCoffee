@@ -4,28 +4,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController">
    <center>
       <AnchorPane prefHeight="326.0" prefWidth="250.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="nickLabel" layoutX="78.0" layoutY="117.0" text="NickName" />
-            <Label layoutX="155.0" layoutY="117.0" text="님 안녕하세요" />
+            <Label layoutX="137.0" layoutY="117.0" text="님 안녕하세요" />
          </children></AnchorPane>
    </center>
-   <top>
-      <HBox prefHeight="34.0" prefWidth="250.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="BackBtn" mnemonicParsing="false" onAction="#handleBackButton" text="&lt;&lt;" />
-         </children></HBox>
-   </top>
    <bottom>
       <AnchorPane prefHeight="30.0" prefWidth="250.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="homeBtn" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" text="Home" />
-            <Button fx:id="menuBtn" layoutX="222.0" layoutY="3.0" mnemonicParsing="false" text="三" />
-            <Button fx:id="coffeeBtn" layoutY="3.0" mnemonicParsing="false" onAction="#handleCoffeeButton" text="Coffee" />
+            <Button fx:id="coffeeBtn" layoutY="1.0" mnemonicParsing="false" onAction="#handleCoffeeButton" text="Coffee" />
+            <Button fx:id="BackBtn" layoutX="193.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleBackButton" text="Logout" />
          </children></AnchorPane>
    </bottom>
+   <top>
+      <AnchorPane prefHeight="28.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="menuBtn" layoutX="223.0" layoutY="-2.0" mnemonicParsing="false" text="三" />
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

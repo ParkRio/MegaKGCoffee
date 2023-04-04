@@ -226,14 +226,14 @@ public class Opener {
 
     public void BackButton(Stage stage) {
         try {
-            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_main2.fxml").toURI().toURL();
+            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Login.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(backPath);
             Parent backForm = fxmlLoader.load();
 
             Opener opener = new Opener();
             opener.setPrimaryStage(stage);
-            HomeViewMainController mainController = fxmlLoader.getController();
-            mainController.setOpener(opener);
+            LoginController loginController = fxmlLoader.getController();
+            loginController.setOpener(opener);
 
             Scene backScene = new Scene(backForm);
             stage.setTitle("test");

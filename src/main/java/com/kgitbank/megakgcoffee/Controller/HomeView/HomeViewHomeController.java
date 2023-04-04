@@ -4,6 +4,7 @@ import com.kgitbank.megakgcoffee.Model.DTO.OrderDetail.OrderDataSingleton;
 import com.kgitbank.megakgcoffee.Opener.Opener;
 
 import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewHomeService;
+import com.kgitbank.megakgcoffee.Service.Register.CommonService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,7 +21,7 @@ public class HomeViewHomeController implements Initializable {
 
     @FXML Button coffeeBtn;
     @FXML Button menuBtn;
-    @FXML Button homeBtn;
+    @FXML Button logoutBtn;
     @FXML Button BackBtn;
     @FXML Label nickLabel;
     private HomeViewHomeService homeService;
@@ -55,6 +56,7 @@ public class HomeViewHomeController implements Initializable {
         homeService = new HomeViewHomeService();
         nickLabel.setText(orderDataSingleton.getReg_name());
         //homeService.NickName(nickLabel);
+
     }
 
 
@@ -62,12 +64,12 @@ public class HomeViewHomeController implements Initializable {
     private void handleBackButton(ActionEvent event)  {   // 홈화면에서 메인화면으로
         Stage stage = (Stage) BackBtn.getScene().getWindow();
         opener.BackButton(stage);
-
+        CommonService.msg("로그아웃 되었습니다.");
     }
 
     @FXML
     private void handleCoffeeButton(ActionEvent event)  {   // 홈화면에서 메인화면으로
-        Stage stage = (Stage) BackBtn.getScene().getWindow();
+        Stage stage = (Stage) logoutBtn.getScene().getWindow();
         opener.CoffeeButton(stage);
 
     }
