@@ -5,6 +5,7 @@ import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
 import com.kgitbank.megakgcoffee.Controller.OrderDetail.OrderDetailController;
 import com.kgitbank.megakgcoffee.Controller.Orders.OrdersController;
 import com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController;
+import com.kgitbank.megakgcoffee.Controller.Register.FindController;
 import com.kgitbank.megakgcoffee.Controller.Register.LoginController;
 import com.kgitbank.megakgcoffee.Model.DTO.OrderDetail.OrderDataSingleton;
 import javafx.fxml.FXML;
@@ -44,6 +45,24 @@ public class Opener {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+    }
+
+    // 메뉴 화면 실행
+    public void findOpen() {
+        Stage findStage = new Stage();
+        try {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Find.fxml").toURI().toURL();
+            FXMLLoader loader = new FXMLLoader(fxmlPath);
+            Parent findForm = null;
+            findForm = loader.load();
+            Scene scene = new Scene(findForm);
+            findStage.setTitle("아이디/비밀번호 찾기");
+            findStage.setScene(scene);
+            findStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // 회원 가입 화면 실행

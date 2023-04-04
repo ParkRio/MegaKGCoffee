@@ -69,5 +69,10 @@ public class LoginController implements Initializable {
         opener.regOpen();
     }
 
+    // 아이디/비밀번호 버튼
+    public void findProc(){
+        opener.findOpen();
+    }
+
 }
 
