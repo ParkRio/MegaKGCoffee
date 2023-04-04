@@ -19,6 +19,8 @@ public class OrderDataSingleton {
     private int reg_seq; // 회원 PK 값
 
     private String reg_name; // 회원 이름 정보
+    
+    private String YesOrNO = "N"; // 로그인 판별
 
     private OrderDataSingleton(){}
 
@@ -72,5 +74,13 @@ public class OrderDataSingleton {
 
     public void setReg_name(String reg_name) {
         this.reg_name = reg_name;
+    }
+
+    public String getYesOrNO() {
+        return YesOrNO;
+    }
+
+    public void setYesOrNO(String yesOrNO) {
+        YesOrNO = yesOrNO;
     }
 }

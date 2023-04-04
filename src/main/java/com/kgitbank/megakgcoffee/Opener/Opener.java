@@ -82,8 +82,22 @@ public class Opener {
     }
 
     // 주문 페이지 화면 실행
-    public void OrderPageOpen() {
-
+    public void OrderPageOpen(Stage stage) {
+        try {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Orders.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
+            Parent paymentForm = fxmlLoader.load();
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            OrdersController ordersController = fxmlLoader.getController();
+            ordersController.setOpener(opener);
+            Scene scene = new Scene(paymentForm);
+            stage.setTitle("Payment");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // 주문 상세 페이지 화면 실행
@@ -213,11 +227,10 @@ public class Opener {
             opener.setPrimaryStage(stage);
             HomeViewHomeController homeViewHomeController = fxmlLoader.getController();
             homeViewHomeController.setOpener(opener);
-            homeViewHomeController.setStage(stage);
             Scene scene = new Scene(homeform);
-            primaryStage.setTitle("main page");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+            stage.setTitle("main page");
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
 

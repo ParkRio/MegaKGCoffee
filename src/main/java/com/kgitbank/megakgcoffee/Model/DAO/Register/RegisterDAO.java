@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class RegisterDAO {
     private ConnectionMaker connectionMaker = ConnectionFactory.getOracleInstance();
@@ -23,8 +25,10 @@ public class RegisterDAO {
     }
 
     public void regProc(RegisterDTO reg) {
+
         PreparedStatement ps = null;
         String sql = "INSERT INTO tb_register(reg_seq, reg_name, reg_id, reg_nick, reg_pwd, reg_tel, reg_birth) VALUES(register_seq.NEXTVAL,?,?,?,?,?,?)";
+
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, reg.getReg_name());
@@ -38,6 +42,7 @@ public class RegisterDAO {
             e.printStackTrace();
         }
     }
+
     public String Nickname(RegisterDTO registerDTO) {
 
         String NicknameSQL = "SELECT reg_nick FROM tb_register where reg_id = ?";
@@ -59,5 +64,20 @@ public class RegisterDAO {
         return reg_nick;
     }
 
+    public boolean sameIdExist(String id) {
+
+        String sameIdExistSQL = "SELECT * FROM tb_register WHERE reg_id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sameIdExistSQL);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
 
 }
