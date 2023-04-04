@@ -27,7 +27,7 @@ public class RegisterDAO {
     public void regProc(RegisterDTO reg) {
 
         PreparedStatement ps = null;
-        String sql = "INSERT INTO tb_register(reg_seq, reg_name, reg_id, reg_nick, reg_pwd, reg_tel, reg_birth) VALUES(register_seq.NEXTVAL,?,?,?,?,?,?)";
+        String sql = "INSERT INTO tb_register(reg_seq, reg_name, reg_id, reg_nick, reg_pwd, reg_tel, reg_birth) VALUES(register_seq.NEXTVAL,?,?,?,?,?,SYSDATE)";
 
         try {
             ps = connection.prepareStatement(sql);
@@ -36,7 +36,7 @@ public class RegisterDAO {
             ps.setString(3, reg.getReg_nick());
             ps.setString(4, reg.getReg_pwd());
             ps.setString(5, reg.getReg_tel());
-            ps.setString(6, reg.getReg_birth());
+//            ps.setString(6, reg.getReg_birth());
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

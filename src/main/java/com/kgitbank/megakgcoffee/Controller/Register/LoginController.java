@@ -68,5 +68,6 @@ public class LoginController implements Initializable {
     public void regProc(){
         opener.regOpen();
     }
+
 }
 

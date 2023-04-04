@@ -71,8 +71,8 @@ public class RegisterService {
         }
 
         // 회원 가입
-//        RegisterDAO regDao = new RegisterDAO();
-//        regDao.regProc(reg);
+        RegisterDAO regDao = new RegisterDAO();
+        regDao.regProc(reg);
 
     }
 
