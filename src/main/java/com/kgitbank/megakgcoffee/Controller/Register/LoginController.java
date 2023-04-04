@@ -65,7 +65,8 @@ public class LoginController implements Initializable {
             Stage stage = (Stage) reg_id.getScene().getWindow();
             opener.menuOpen(stage);
 
-            memberController.MemberLoadProc(orderDataSingleton); // 로그인컨트롤러에서 loginProc를 실행했기때문에 id 등 로그인 정보가 저장 되어 있을것이라고
+            System.out.println(orderDataSingleton.getReg_name());
+            memberController.MemberLoadProc(orderDataSingleton.getReg_name()); // 로그인컨트롤러에서 loginProc를 실행했기때문에 id 등 로그인 정보가 저장 되어 있을것이라고
             // 생각했음. -lgw
         }
     }

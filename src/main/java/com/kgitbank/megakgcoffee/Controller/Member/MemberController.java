@@ -31,12 +31,10 @@ public class MemberController implements Initializable {
 //        loginService = new LoginService(); 새롭게 로그인 서비스를 하면 안될것 같음.
     }
 
-    public void MemberLoadProc(OrderDataSingleton orderDataSingleton) {
-
-
-
+    public void MemberLoadProc(String orderDataSingleton) {
+        System.out.println(orderDataSingleton);
 //        reg_pw = orderDataSingleton.getReg_pw();
-        nickLabel.setText(orderDataSingleton.getReg_id());
+        nickLabel.setText(orderDataSingleton);
 
 
     }
