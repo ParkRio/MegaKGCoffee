@@ -5,14 +5,7 @@ import com.kgitbank.megakgcoffee.Model.DAO.Register.RegisterDAO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 
 public class RegisterService {
-    public void regProc(RegisterDTO reg) {        
-        // 아이디 중복 검증
-        LoginDAO loginDao = new LoginDAO();
-        String dbPw = loginDao.loginProc(reg.getReg_id());
-        if(dbPw != null) {
-            CommonService.msg("아이디가 사용 중 입니다.");
-            return;
-        }
+    public void regProc(RegisterDTO reg) {
 
         // 비밀번호와 비밀번호 확인이 일치하는지 검사
         if(reg.getReg_pwd().equals(reg.getConfirm()) == false){
@@ -66,5 +59,22 @@ public class RegisterService {
         RegisterDAO regDao = new RegisterDAO();
         regDao.regProc(reg);
 
+    }
+
+    public void checkButton(RegisterDTO reg) {
+        // 아이디 입력 검사
+        String idStr = reg.getReg_id();
+        // 아이디 중복 검증
+        LoginDAO loginDao = new LoginDAO();
+        String dbPw = loginDao.loginProc(reg.getReg_id());
+        if(dbPw != null) {
+            CommonService.msg("아이디가 사용 중 입니다.");
+            return;
+        } else if(idStr.isEmpty()){
+            CommonService.msg("아이디를 입력해주세요.");
+            return;
+        } else {
+            CommonService.msg("아이디를 사용할 수 있습니다.");
+        }
     }
 }

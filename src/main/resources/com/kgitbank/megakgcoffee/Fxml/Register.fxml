@@ -40,7 +40,7 @@
                </VBox.margin>
                <children>
                   <TextField fx:id="reg_id" prefWidth="130.0" promptText="아이디" />
-                  <Button mnemonicParsing="false" prefWidth="55.0" text="CHK" />
+                  <Button mnemonicParsing="false" onAction="#checkButton" prefWidth="55.0" text="CHK" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.5" prefWidth="200.0">

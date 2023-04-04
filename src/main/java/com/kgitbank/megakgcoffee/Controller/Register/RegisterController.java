@@ -1,8 +1,10 @@
 package com.kgitbank.megakgcoffee.Controller.Register;
 
+import com.kgitbank.megakgcoffee.Model.DAO.Register.LoginDAO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 import com.kgitbank.megakgcoffee.Service.Register.CommonService;
 import com.kgitbank.megakgcoffee.Service.Register.RegisterService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -66,6 +68,14 @@ public class RegisterController implements Initializable {
     public void regCancelProc() {
         Stage stage = (Stage)closeBtn.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    public void checkButton() {
+        RegisterDTO reg = new RegisterDTO();
+        reg.setReg_id(reg_id.getText());
+        service.checkButton(reg);
+
     }
 
 }
