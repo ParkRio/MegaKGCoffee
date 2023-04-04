@@ -62,6 +62,8 @@ public class LoginController implements Initializable {
             ResponseRegDTO responseRegDTO = service.registerInfo(reg_id.getText(), reg_pwd.getText());
             orderDataSingleton.setReg_seq(responseRegDTO.getReg_seq());
             orderDataSingleton.setReg_name(responseRegDTO.getReg_name());
+            orderDataSingleton.setReg_date(responseRegDTO.getReg_date());
+            orderDataSingleton.setReg_tel(responseRegDTO.getReg_tel());
             Stage stage = (Stage) reg_id.getScene().getWindow();
             opener.menuOpen(stage);
 

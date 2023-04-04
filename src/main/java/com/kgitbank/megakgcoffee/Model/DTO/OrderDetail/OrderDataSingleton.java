@@ -24,6 +24,10 @@ public class OrderDataSingleton {
 
     private String reg_pw; // 회원 PW 값
 
+    private String reg_date;
+
+    private String reg_tel;
+
 
 
     private String YesOrNO = "N"; // 로그인 판별
@@ -86,9 +90,17 @@ public class OrderDataSingleton {
         this.reg_name = reg_name;
     }
 
-    public String getReg_pw() {  return reg_pw;  }
+    public String getReg_pw() { return reg_pw; }
 
-    public void setReg_pw(String reg_pw) {  this.reg_pw = reg_pw;  }
+    public void setReg_pw(String reg_pw) { this.reg_pw = reg_pw;  }
+
+    public void setReg_date(String reg_date) { this.reg_date = reg_date; }
+
+    public String getReg_date() { return reg_date; }
+
+    public void setReg_tel(String reg_tel) { this.reg_tel = reg_tel;  }
+
+    public String getReg_tel() {  return reg_tel;  }
 
     public String getYesOrNO() {
         return YesOrNO;

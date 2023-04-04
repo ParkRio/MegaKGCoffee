@@ -73,7 +73,7 @@ public class LoginDAO {
 
         ResponseRegDTO responseRegDTO = null;
 
-        String registerInfoSQL = "SELECT reg_seq, reg_name, reg_id, reg_nick FROM tb_register"
+        String registerInfoSQL = "SELECT reg_seq, reg_name, reg_id, reg_nick, reg_date, reg_tel FROM tb_register"
                 + " WHERE reg_id = ? AND reg_pwd = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(registerInfoSQL);
@@ -84,8 +84,10 @@ public class LoginDAO {
                  responseRegDTO = new ResponseRegDTO(
                         rs.getInt("reg_seq"),
                         rs.getString("reg_name"),
-                        rs.getString("reg_id"),
-                        rs.getString("reg_nick")
+                         rs.getString("reg_id"),
+                        rs.getString("reg_nick"),
+                         rs.getString("reg_date"),
+                         rs.getString("reg_tel")
                 );
             }
             rs.close();

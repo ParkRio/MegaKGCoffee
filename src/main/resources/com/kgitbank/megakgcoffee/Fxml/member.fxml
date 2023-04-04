@@ -40,9 +40,9 @@
       <Label layoutX="58.0" layoutY="178.0" text="닉네임" />
       <Label fx:id="nickLabel" layoutX="165.0" layoutY="178.0" text="Label" />
       <Button layoutX="206.0" layoutY="174.0" mnemonicParsing="false" text="변경" />
-      <Label layoutX="52.0" layoutY="197.0" text="생년월일" />
-      <Label fx:id="birthLabel" layoutX="165.0" layoutY="197.0" text="년 월 일" />
+      <Label layoutX="52.0" layoutY="197.0" text="가입일" />
+      <Label fx:id="dateLabel" layoutX="165.0" layoutY="197.0" text="년 월 일" />
       <Label layoutX="52.0" layoutY="212.0" text="전화번호" />
-      <Label fx:id="phoneLabel" layoutX="165.0" layoutY="212.0" text="010-555" />
+      <Label fx:id="telLabel" layoutX="165.0" layoutY="212.0" text="010-555" />
    </children>
 </AnchorPane>
