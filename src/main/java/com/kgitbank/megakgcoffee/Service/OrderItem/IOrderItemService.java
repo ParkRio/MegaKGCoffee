@@ -23,7 +23,7 @@ public class IOrderItemService implements OrderItemService{
             OrderItemDTO orderItemDTO = new OrderItemDTO(orderItemMenu_seq, cnt, total_price);
             orderItem_seq = orderItemDAO.insertOrderItem(orderItemDTO);
             if (orderItem_seq > 0) {
-                orderCheckService.createOrderCheckToCart(orderItem_seq, 1); // todo :: 주문상세번호, 회원번호 (test로 회원번호 1)    
+                orderCheckService.createOrderCheckToCart(orderItem_seq, orderDataSingleton.getReg_seq()); // todo :: 주문상세번호, 회원번호 (test로 회원번호 1)
             }
             else {
                 System.out.println("주문체크 테이블 입력 오류"); // todo :: 추후 삭제
@@ -47,7 +47,7 @@ public class IOrderItemService implements OrderItemService{
             orderItem_seq = orderItemDAO.insertOrderItem(orderItemDTO);
             orderDataSingleton.setOrder_item_seq(orderItem_seq); // todo :: 주문 담은거 PK값 싱글톤에 저장
             if (orderItem_seq > 0) {
-                orderCheckService.createOrderNow(orderItem_seq, 1); // todo :: 주문상세번호, 회원번호 (test로 회원번호 1)
+                orderCheckService.createOrderNow(orderItem_seq, orderDataSingleton.getReg_seq()); // todo :: 주문상세번호, 회원번호 (test로 회원번호 1)
             } else {
                 System.out.println("주문체크 테이블 입력 오류"); // todo :: 추후 삭제
             }

@@ -92,7 +92,7 @@ public class OrdersController implements Initializable {
                 "    -fx-background-color: black;\n" +
                 "    -fx-text-fill: white;");
         ordersService.searchMenu(category_menu, arrayCircles, arrayLabelNames, arrayLabelPrices, arrayVBoxes, how_many_items);
-        cart_items.setText(String.valueOf(orderCheckService.findItemsInTheCart(1))); // todo :: 회원번호 1번으로 실험
+        cart_items.setText(String.valueOf(orderCheckService.findItemsInTheCart(orderDataSingleton.getReg_seq()))); // todo :: 회원번호 1번으로 실험
 
     }
 
