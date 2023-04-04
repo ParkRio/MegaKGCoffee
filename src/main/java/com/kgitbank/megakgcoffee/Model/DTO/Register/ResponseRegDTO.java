@@ -14,6 +14,7 @@ public class ResponseRegDTO {
         this.reg_nick = reg_nick;
         this.reg_name = reg_name;
         this.reg_id = reg_id;
+
     }
 
 

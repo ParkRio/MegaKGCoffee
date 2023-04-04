@@ -1,5 +1,6 @@
 package com.kgitbank.megakgcoffee.Controller.Register;
 
+import com.kgitbank.megakgcoffee.Controller.Member.MemberController;
 import com.kgitbank.megakgcoffee.Model.DTO.OrderDetail.OrderDataSingleton;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.ResponseRegDTO;
 import com.kgitbank.megakgcoffee.Opener.Opener;
@@ -25,7 +26,7 @@ public class LoginController implements Initializable {
 
     private LoginService service;
     private Opener opener;
-
+    private MemberController memberController; // 맴버컨트롤러도 같이 생성하려고.  -lgw
     private Stage stage;
 
     public void setStage(Stage stage) {
@@ -39,6 +40,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         service = new LoginService();
+        memberController = new MemberController();
     }
 
     public void loginProc(){
@@ -62,6 +64,9 @@ public class LoginController implements Initializable {
             orderDataSingleton.setReg_name(responseRegDTO.getReg_name());
             Stage stage = (Stage) reg_id.getScene().getWindow();
             opener.menuOpen(stage);
+
+            memberController.MemberLoadProc(); // 로그인컨트롤러에서 loginProc를 실행했기때문에 id 등 로그인 정보가 저장 되어 있을것이라고
+            // 생각했음.
         }
     }
     // 가입 버튼

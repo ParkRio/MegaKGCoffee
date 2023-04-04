@@ -237,18 +237,17 @@ public class Opener {
         }
     }
 
-    public void BackButton(Stage stage) {
+    public void TestButton(Stage stage) {  // homeViewHomeController 에서 testButton 으로 사용할 예정임 -lgw
         try {
-            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Login.fxml").toURI().toURL();
-            FXMLLoader fxmlLoader = new FXMLLoader(backPath);
-            Parent backForm = fxmlLoader.load();
+            URL Path = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/member.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(Path);
+            Parent Form = fxmlLoader.load();
 
-            Opener opener = new Opener();
-            opener.setPrimaryStage(stage);
-            LoginController loginController = fxmlLoader.getController();
-            loginController.setOpener(opener);
 
-            Scene backScene = new Scene(backForm);
+
+
+
+            Scene backScene = new Scene(Form);
             stage.setTitle("test");
             stage.setScene(backScene);
             stage.show();

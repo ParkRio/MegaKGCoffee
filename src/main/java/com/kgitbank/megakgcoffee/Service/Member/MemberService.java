@@ -1,4 +1,9 @@
 package com.kgitbank.megakgcoffee.Service.Member;
 
-public class MemberService {
+import com.kgitbank.megakgcoffee.Model.DAO.Member.MemberDAO;
+
+public interface MemberService {
+
+
+
 }

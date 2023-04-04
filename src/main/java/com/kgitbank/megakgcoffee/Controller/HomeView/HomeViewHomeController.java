@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -26,7 +27,7 @@ public class HomeViewHomeController implements Initializable {
     @FXML public Label nickname;
     @FXML public BorderPane bp;
     @FXML public AnchorPane ap;
-
+    @FXML public Button testBtn;
     private Opener opener;
 
     public void setOpener(Opener opener) {
@@ -66,6 +67,11 @@ public class HomeViewHomeController implements Initializable {
             e.printStackTrace();
         }
         bp.setCenter(root);
+    }
+
+    public void HomeToMemberTest(ActionEvent event){
+        Stage stage = (Stage) testBtn.getScene().getWindow();
+        opener.TestButton(stage);
     }
 
 

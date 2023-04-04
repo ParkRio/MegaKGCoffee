@@ -17,9 +17,15 @@ public class OrderDataSingleton {
     private int checkOrder; // 결제화면에 들어왔을 떄 바로주문인지 장바구니 주문인지 확인
 
     private int reg_seq; // 회원 PK 값
+    
+    private String reg_id; // 회원 ID 값
 
     private String reg_name; // 회원 이름 정보
-    
+
+    private String reg_pw; // 회원 PW 값
+
+
+
     private String YesOrNO = "N"; // 로그인 판별
 
     private OrderDataSingleton(){}
@@ -68,6 +74,10 @@ public class OrderDataSingleton {
         this.reg_seq = reg_seq;
     }
 
+    public String getReg_id() { return reg_id;  }
+
+    public void setReg_id(String reg_id) { this.reg_id = reg_id; }
+
     public String getReg_name() {
         return reg_name;
     }
@@ -75,6 +85,10 @@ public class OrderDataSingleton {
     public void setReg_name(String reg_name) {
         this.reg_name = reg_name;
     }
+
+    public String getReg_pw() {  return reg_pw;  }
+
+    public void setReg_pw(String reg_pw) {  this.reg_pw = reg_pw;  }
 
     public String getYesOrNO() {
         return YesOrNO;

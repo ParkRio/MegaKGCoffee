@@ -38,9 +38,7 @@ public class LoginService {
         }
     }
 
-    public String loginCheck(String id) {
-        return loginDAO.loginCheck(id);
-    }
+    public String loginCheck(String id) {  return loginDAO.loginCheck(id);  }
 
     public ResponseRegDTO registerInfo(String id, String pw) {
         return loginDAO.registerInfo(id, pw);

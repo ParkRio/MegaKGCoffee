@@ -1,6 +1,7 @@
 package com.kgitbank.megakgcoffee;
 
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
+import com.kgitbank.megakgcoffee.Controller.Member.MemberController;
 import com.kgitbank.megakgcoffee.Opener.Opener;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -40,6 +41,8 @@ public class Main extends Application {
 
         HomeViewMainController mainController = fxmlLoader.getController();
         mainController.setOpener(opener);
+//        MemberController memberController = fxmlLoader.getController();
+//        memberController.setOpener(opener);
 
         Scene scene = new Scene(mainForm);
         stage.setScene(scene);
