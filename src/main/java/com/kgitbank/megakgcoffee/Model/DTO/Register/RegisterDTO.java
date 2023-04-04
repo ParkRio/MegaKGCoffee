@@ -11,6 +11,18 @@ public class RegisterDTO {
     private String reg_tel;
     private String reg_birth;
 
+    public RegisterDTO(){}
+
+    public RegisterDTO(String reg_name, String reg_id, String reg_nick, String reg_pwd, String confirm, String reg_tel, String reg_birth){
+        this.reg_name = reg_name;
+        this.reg_id = reg_id;
+        this.reg_nick = reg_nick;
+        this.reg_pwd = reg_pwd;
+        this.confirm = confirm;
+        this.reg_tel = reg_tel;
+        this.reg_birth = reg_birth;
+    }
+
     public String getReg_name() {
         return reg_name;
     }

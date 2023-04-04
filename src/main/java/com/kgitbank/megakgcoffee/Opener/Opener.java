@@ -27,21 +27,23 @@ public class Opener {
         this.primaryStage = primaryStage;
     }
 
-    public void LoginOpen() { //로그인 버튼 눌르면 // 로그인 창으로 이동 // 지금은 홈으로 이동 되게끔
-        Stage logStage = new Stage();
-        try{
-            URL homePath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Login.fxml").toURI().toURL();
-            FXMLLoader fxmlLoader = new FXMLLoader(homePath);
-            Scene scene = new Scene(fxmlLoader.load());
-            Opener opener = new Opener();
-            LoginController loginCon = fxmlLoader.getController();
-            loginCon.setOpener(opener);
-            logStage.setTitle("로그인 화면");
-            logStage.setScene(scene);
-            logStage.show();
-        }catch (Exception e){
-            e.printStackTrace();;
-        }
+    public void BeforeLoginOpen(Stage stage) { //로그인 버튼 눌르면 // 로그인 창으로 이동 // 지금은 홈으로 이동 되게끔
+            try {
+                URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Login.fxml").toURI().toURL();
+                FXMLLoader loader = new FXMLLoader(fxmlPath);
+                Parent orderDetailForm = null;
+                orderDetailForm = loader.load();
+                Opener opener = new Opener();
+                LoginController loginController = loader.getController();
+                loginController.setOpener(opener);
+                Scene scene = new Scene(orderDetailForm);
+                stage.setTitle("Order Detail");
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     // 회원 가입 화면 실행
@@ -60,23 +62,42 @@ public class Opener {
     }
 
     // 메뉴 화면 실행
-    public void menuOpen() {
-        Stage regStage = new Stage();
+    public void menuOpen(Stage stage) {
         try {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_home.fxml").toURI().toURL();
-            FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
-            Scene scene = new Scene(fxmlLoader.load());
-            regStage.setTitle("메인 화면");
-            regStage.setScene(scene);
-            regStage.show();
+            FXMLLoader loader = new FXMLLoader(fxmlPath);
+            Parent homeView_homeForm = null;
+            homeView_homeForm = loader.load();
+            Opener opener = new Opener();
+            HomeViewHomeController homeViewHomeController = loader.getController();
+            homeViewHomeController.setOpener(opener);
+            Scene scene = new Scene(homeView_homeForm);
+            stage.setTitle("메인화면");
+            stage.setScene(scene);
+            stage.show();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // 주문 페이지 화면 실행
-    public void OrderPageOpen() {
-
+    public void OrderPageOpen(Stage stage) {
+        try {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Orders.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
+            Parent paymentForm = fxmlLoader.load();
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            OrdersController ordersController = fxmlLoader.getController();
+            ordersController.setOpener(opener);
+            Scene scene = new Scene(paymentForm);
+            stage.setTitle("Payment");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // 주문 상세 페이지 화면 실행
@@ -206,11 +227,10 @@ public class Opener {
             opener.setPrimaryStage(stage);
             HomeViewHomeController homeViewHomeController = fxmlLoader.getController();
             homeViewHomeController.setOpener(opener);
-            homeViewHomeController.setStage(stage);
             Scene scene = new Scene(homeform);
-            primaryStage.setTitle("main page");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+            stage.setTitle("main page");
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
 
@@ -259,4 +279,25 @@ public class Opener {
         }
     }
 
+    public void LoginButton(Stage stage){
+        try {
+
+            // coffe 화면으로 fxml 주소 변경해야함
+            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Register.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(backPath);
+            Parent coffeeForm = fxmlLoader.load();
+
+            Opener opener = new Opener();
+            opener.setPrimaryStage(stage);
+            HomeViewMainController mainController = fxmlLoader.getController();
+            mainController.setOpener(opener);
+
+            Scene backScene = new Scene(coffeeForm);
+            stage.setTitle("test");
+            stage.setScene(backScene);
+            stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

@@ -28,24 +28,24 @@ public class HomeViewDAO {
 
 
 
-    public String Nickname(HomeViewDTO homeViewDTO) {
-
-        String NicknameSQL = "SELECT test_id FROM test_tb_Coffee where test_id=?";
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String nick = null;
-        try {
-            ps= connection.prepareStatement(NicknameSQL);
-            System.out.println("쿼리문"+homeViewDTO.getTestId());
-            ps.setString(1, homeViewDTO.getTestId());
-            rs = ps.executeQuery();
-            if(rs.next()) {
-                nick = rs.getString("nick");
-            }
-            ps.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return nick;
-    }
+//    public String Nickname(HomeViewDTO homeViewDTO) {
+//
+//        String NicknameSQL = "SELECT test_id FROM test_tb_Coffee where test_id=?";
+//        PreparedStatement ps = null;
+//        ResultSet rs = null;
+//        String nick = null;
+//        try {
+//            ps= connection.prepareStatement(NicknameSQL);
+//            System.out.println("쿼리문"+homeViewDTO.getTestId());
+//            ps.setString(1, homeViewDTO.getTestId());
+//            rs = ps.executeQuery();
+//            if(rs.next()) {
+//                nick = rs.getString("nick");
+//            }
+//            ps.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return nick;
+//    }
 }

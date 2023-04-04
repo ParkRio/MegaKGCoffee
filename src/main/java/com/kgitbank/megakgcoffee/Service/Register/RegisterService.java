@@ -3,20 +3,28 @@ package com.kgitbank.megakgcoffee.Service.Register;
 import com.kgitbank.megakgcoffee.Model.DAO.Register.LoginDAO;
 import com.kgitbank.megakgcoffee.Model.DAO.Register.RegisterDAO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 
 public class RegisterService {
-    public void regProc(RegisterDTO reg) {        
+
+    LoginDAO loginDao = new LoginDAO();
+    RegisterDAO registerDAO = new RegisterDAO();
+
+    public void regProc(RegisterDTO reg, Label confirm_check, PasswordField confirm) {
         // 아이디 중복 검증
-        LoginDAO loginDao = new LoginDAO();
-        String dbPw = loginDao.loginProc(reg.getReg_id());
-        if(dbPw != null) {
-            CommonService.msg("아이디가 사용 중 입니다.");
-            return;
-        }
+//        String dbPw = loginDao.loginProc(reg.getReg_id());
+//        if(dbPw != null) {
+//            CommonService.msg("아이디가 사용 중 입니다.");
+//            return;
+//        }
 
         // 비밀번호와 비밀번호 확인이 일치하는지 검사
         if(reg.getReg_pwd().equals(reg.getConfirm()) == false){
             CommonService.msg("비밀번호가 일치하지 않습니다.");
+            confirm.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-background-color: rgb(255,198,198)");
+            confirm_check.setText("비밀번호가 일치하지 않습니다.");
+            confirm_check.setStyle("-fx-text-fill: red");
             return;
         }
 
@@ -63,8 +71,12 @@ public class RegisterService {
         }
 
         // 회원 가입
-        RegisterDAO regDao = new RegisterDAO();
-        regDao.regProc(reg);
+//        RegisterDAO regDao = new RegisterDAO();
+//        regDao.regProc(reg);
 
+    }
+
+    public boolean ExistId(String id) {
+        return registerDAO.sameIdExist(id);
     }
 }
