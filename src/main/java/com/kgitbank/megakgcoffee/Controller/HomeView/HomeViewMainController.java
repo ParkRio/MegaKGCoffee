@@ -1,7 +1,7 @@
 package com.kgitbank.megakgcoffee.Controller.HomeView;
 
 import com.kgitbank.megakgcoffee.Opener.Opener;
-import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewService;
+import com.kgitbank.megakgcoffee.Service.HomeView.HomeViewMainService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,13 +15,13 @@ public class HomeViewMainController implements Initializable {
 
     @FXML
     private Button homeview_loginBtn;
-    private HomeViewService service;
+    private HomeViewMainService service;
     private Opener opener;
     private Parent HomeForm;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        service = new HomeViewService();
+        service = new HomeViewMainService();
 
 
     }

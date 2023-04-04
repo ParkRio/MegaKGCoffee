@@ -68,7 +68,6 @@ public class OrderDetailController implements Initializable {
         cnt++; menu_count.setText(String.valueOf(cnt));
         menu_price.setText(String.valueOf(price*cnt));
         total_price = price*cnt;
-        System.out.println(total_price);
     }
 
     public void minus_count_button(MouseEvent mouseEvent) {
@@ -129,6 +128,14 @@ public class OrderDetailController implements Initializable {
 //        alert.showAndWait();
 
     }
+    // 바로주문 버튼 클릭시 Alert 메시지 문 띄우기 - 테스트 필요
+    public void orderProc(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("결제 완료");
+        alert.setHeaderText("HeaderText");
+        alert.setContentText("ContentText");
+        alert.showAndWait();
+    }
 
     // 주문 페이지 뒤로 가기
     public void back_to_orders(MouseEvent mouseEvent) {
@@ -136,6 +143,4 @@ public class OrderDetailController implements Initializable {
         Opener opener = new Opener();
         opener.BackToOrderPage(stage);
     }
-
-
 }
