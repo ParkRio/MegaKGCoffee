@@ -6,6 +6,8 @@ module com.kgitbank.megakgcoffee {
 
     opens com.kgitbank.megakgcoffee.Controller.Member;
     exports com.kgitbank.megakgcoffee.Controller.Member to javafx.fxml;
+    opens com.kgitbank.megakgcoffee.Model.DTO.OrderDetail;
+    exports com.kgitbank.megakgcoffee.Model.DTO.OrderDetail to javafx.fxml;
 
     opens com.kgitbank.megakgcoffee to javafx.fxml;
     exports com.kgitbank.megakgcoffee;

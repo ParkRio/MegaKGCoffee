@@ -20,7 +20,7 @@ public class MemberController implements Initializable {
     @FXML private Label phoneLabel;
     private LoginService loginService;
     Opener opener;
-    OrderDataSingleton orderDataSingleton = OrderDataSingleton.getInstance();  //싱글톤을 가져옴.
+//    OrderDataSingleton orderDataSingleton = OrderDataSingleton.getInstance();  //싱글톤을 가져옴.
 
     public void setOpener(Opener opener) {
         this.opener = opener;
@@ -31,13 +31,12 @@ public class MemberController implements Initializable {
 //        loginService = new LoginService(); 새롭게 로그인 서비스를 하면 안될것 같음.
     }
 
-    public void MemberLoadProc() {
-        String reg_id;
-        String reg_pw;
+    public void MemberLoadProc(OrderDataSingleton orderDataSingleton) {
 
-        reg_id = orderDataSingleton.getReg_id();
+
+
 //        reg_pw = orderDataSingleton.getReg_pw();
-        nickLabel.setText(reg_id);
+        nickLabel.setText(orderDataSingleton.getReg_id());
 
 
     }
