@@ -42,9 +42,21 @@ public class LoginController implements Initializable {
     }
 
     public void loginProc(){
-        service.loginProc(reg_id.getText(), reg_pwd.getText()); // 회원가입 판별
-        String result = service.loginCheck(reg_id.getText());
-        if(result != null && result.equals("Y")) {
+
+        if(reg_id.getText().length() == 0) {
+            reg_id.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-background-color: rgb(255,198,198)");
+        } else {
+            reg_id.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+        }
+        if (reg_pwd.getText().length() == 0) {
+            reg_pwd.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-background-color: rgb(255,198,198)");
+        } else {
+            reg_pwd.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+        }
+
+        service.loginProc(reg_id.getText(), reg_pwd.getText());
+        //String result = service.loginCheck(reg_id.getText()); // 회원 Y / N 인지 판별
+        if (orderDataSingleton.getYesOrNO().equals("Y")) {
             ResponseRegDTO responseRegDTO = service.registerInfo(reg_id.getText(), reg_pwd.getText());
             orderDataSingleton.setReg_seq(responseRegDTO.getReg_seq());
             orderDataSingleton.setReg_name(responseRegDTO.getReg_name());
