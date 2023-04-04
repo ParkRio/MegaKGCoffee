@@ -56,8 +56,8 @@ public class CartController implements Initializable {
         orderCheckService = OrderCheckServiceFactory.getOrderCheckService();
         setTableViewColumExceptedButton();
         setTableViewDeleteButton();
-        cart_table.setItems(cartService.findAllCartItems(1)); // todo :: 회원번호 1번 테스트
-        how_many_cart.setText("장바구니 수 : " + String.valueOf(cartService.findAllCartItems(1).size()) + " 개"); // todo :: 회원번호 1번 테스트
+        cart_table.setItems(cartService.findAllCartItems(orderDataSingleton.getReg_seq())); // todo :: 회원번호 1번 테스트
+        how_many_cart.setText("장바구니 수 : " + String.valueOf(cartService.findAllCartItems(orderDataSingleton.getReg_seq()).size() + " 개")); // todo :: 회원번호 1번 테스트
 
         setAll_select();
     }

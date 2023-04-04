@@ -3,14 +3,21 @@ package com.kgitbank.megakgcoffee.Controller.Register;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 import com.kgitbank.megakgcoffee.Service.Register.CommonService;
 import com.kgitbank.megakgcoffee.Service.Register.RegisterService;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
@@ -31,6 +38,7 @@ public class RegisterController implements Initializable {
     private Parent RegForm;
 
     private int id_check_count = 0;
+    private String id_okay = "";
 
     public void setRegForm(Parent regForm) {
         RegForm = regForm;
@@ -39,6 +47,45 @@ public class RegisterController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         service = new RegisterService();
+
+        reg_name.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length() > 0) {
+                reg_name.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+            }
+        });
+
+        reg_nick.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length() > 0) {
+                reg_nick.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+            }
+        });
+
+        reg_pwd.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length() > 0) {
+                reg_pwd.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+            }
+        });
+
+        confirm.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length() > 0) {
+                confirm.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+            }
+        });
+
+        reg_tel.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length() > 0) {
+                reg_tel.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+            }
+        });
+
+        reg_id.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
+                id_check_result.setText("아이디 중복체크를 해주세요.");
+                id_check_result.setStyle("-fx-text-fill: red");
+                id_check_count = 0;
+            }
+        });
     }
 
     // 회원 가입 버튼
@@ -80,7 +127,10 @@ public class RegisterController implements Initializable {
             reg_tel.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
         }
 
-        if (id_check_count > 0) {
+        LocalDate myDate = reg_birth.getValue();
+        String birth = myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+        if (id_check_count > 0 && service.ExistId(reg_id.getText())) {
 
             RegisterDTO reg = new RegisterDTO(
                     reg_name.getText(),
@@ -89,7 +139,7 @@ public class RegisterController implements Initializable {
                     reg_pwd.getText(),
                     confirm.getText(),
                     reg_tel.getText(),
-                    reg_birth.getEditor().getText()
+                    birth
             );
 
             service.regProc(reg, confirm_check_result, confirm);
@@ -97,11 +147,6 @@ public class RegisterController implements Initializable {
         } else {
             CommonService.msg("모든 사항을 입력해주시고 아이디 중복체크를 선택해주세요.");
         }
-
-//        CommonService.msg("회원가입이 완료되었습니다.");
-
-//        Stage stage = (Stage)close.getScene().getWindow();
-//        stage.close();
 
     }
 

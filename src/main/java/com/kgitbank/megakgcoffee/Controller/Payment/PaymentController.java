@@ -56,10 +56,4 @@ public class PaymentController implements Initializable {
         primaryStage.show();
     }
 
-
-//    @FXML
-//    public void paymentMouseClicked(MouseEvent event) {
-//        paymentService.payment(paymentReg_style.getText(), paymentReg_comment.getText()
-//        , payment_CashReceipts.getText());
-//    }
 }

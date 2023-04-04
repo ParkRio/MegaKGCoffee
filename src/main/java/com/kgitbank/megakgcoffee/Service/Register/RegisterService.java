@@ -6,6 +6,8 @@ import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import java.util.Date;
+
 public class RegisterService {
 
     LoginDAO loginDao = new LoginDAO();
@@ -65,14 +67,13 @@ public class RegisterService {
 
         // 생년월일 입력 검사
         String birthStr = reg.getReg_birth();
-        if(birthStr.isEmpty()){
+        if(birthStr == null){
             CommonService.msg("생년월일을 입력해주세요.");
             return;
         }
 
         // 회원 가입
-//        RegisterDAO regDao = new RegisterDAO();
-//        regDao.regProc(reg);
+        registerDAO.regProc(reg);
 
     }
 
