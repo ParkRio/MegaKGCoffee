@@ -32,7 +32,7 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Fxml/HomeView_main.fxml"));
         Parent mainForm = fxmlLoader.load();
 
         Opener opener = new Opener();

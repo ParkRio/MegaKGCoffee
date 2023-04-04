@@ -261,7 +261,7 @@ public class Opener {
         try {
 
             // coffe 화면으로 fxml 주소 변경해야함
-            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/HomeView_main.fxml").toURI().toURL();
+            URL backPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/NONONO.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(backPath);
             Parent coffeeForm = fxmlLoader.load();
 
