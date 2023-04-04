@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
+    @FXML public Button find_button;
     @FXML Button backBtn;
     @FXML TextField reg_id;
     @FXML PasswordField reg_pwd;
@@ -27,6 +28,7 @@ public class LoginController implements Initializable {
     private Opener opener;
 
     private Stage stage;
+    private Stage findIdAndPasswordStage;
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -39,6 +41,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         service = new LoginService();
+        findProc();
     }
 
     public void loginProc(){
@@ -59,7 +62,8 @@ public class LoginController implements Initializable {
         if (orderDataSingleton.getYesOrNO().equals("Y")) {
             ResponseRegDTO responseRegDTO = service.registerInfo(reg_id.getText(), reg_pwd.getText());
             orderDataSingleton.setReg_seq(responseRegDTO.getReg_seq());
-            orderDataSingleton.setReg_name(responseRegDTO.getReg_name());
+            orderDataSingleton.setReg_name(responseRegDTO.getReg_name()); // todo :: 현재는 아무곳도 쓰는 곳이 없음 삭제할꺼면 싱글톤도 삭제
+            orderDataSingleton.setReg_nickname(responseRegDTO.getReg_nick());
             Stage stage = (Stage) reg_id.getScene().getWindow();
             opener.menuOpen(stage);
         }
@@ -68,5 +72,19 @@ public class LoginController implements Initializable {
     public void regProc(){
         opener.regOpen();
     }
+
+    public void findProc() {
+        find_button.setOnAction(actionEvent -> {
+            if (findIdAndPasswordStage == null) {
+                findIdAndPasswordStage = new Stage();
+                opener.findOpen(findIdAndPasswordStage);
+            } else {
+                findIdAndPasswordStage.close();
+                findIdAndPasswordStage = null;
+            }
+        });
+    }
+
+
 }
 

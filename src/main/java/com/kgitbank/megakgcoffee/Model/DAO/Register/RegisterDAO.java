@@ -41,7 +41,7 @@ public class RegisterDAO {
             ps.setString(4, reg.getReg_pwd());
             ps.setString(5, reg.getReg_tel());
             ps.setDate(6, birthday);
-            ps.setDate(7, birthday);
+            ps.setDate(7, getCurrentDate());
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -83,6 +83,11 @@ public class RegisterDAO {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private java.sql.Date getCurrentDate() {
+        java.util.Date today = new java.util.Date();
+        return new java.sql.Date(today.getTime());
     }
 
 }

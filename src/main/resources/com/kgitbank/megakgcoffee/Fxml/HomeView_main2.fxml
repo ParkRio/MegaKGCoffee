@@ -5,9 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" styleClass="home_container" stylesheets="@../../../../Styles/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController">
    <children>
-      <Button fx:id="homeview_loginBtn" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleLoginBtn" prefHeight="555.0" prefWidth="400.0" styleClass="home_container">
+      <Button fx:id="homeview_loginBtn" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleLoginBtn" prefHeight="555.0" prefWidth="400.0">
          <graphic>
             <ImageView fitHeight="577.0" fitWidth="568.0" pickOnBounds="true" preserveRatio="true">
                <image>

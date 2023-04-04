@@ -81,7 +81,7 @@
                   <Font name="Artifakt Element Heavy Italic" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="224.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find ID Password" textFill="WHITE">
+            <Button fx:id="find_button" mnemonicParsing="false" onAction="#findProc" prefHeight="23.0" prefWidth="224.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find ID Password" textFill="WHITE">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>

@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
@@ -143,6 +144,7 @@ public class RegisterController implements Initializable {
             );
 
             service.regProc(reg, confirm_check_result, confirm);
+            successRegister();
 
         } else {
             CommonService.msg("모든 사항을 입력해주시고 아이디 중복체크를 선택해주세요.");
@@ -170,6 +172,18 @@ public class RegisterController implements Initializable {
             id_check_result.setText("중복된 아이디가 존재합니다.");
             id_check_result.setStyle("-fx-text-fill: red");
             id_check_count = 0;
+        }
+    }
+
+    public void successRegister() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("정보");
+        alert.setHeaderText("회원가입을 축하합니다.");
+        alert.setContentText("로그인 이후 서비스를 이용하실 수 있습니다.");
+        Optional<ButtonType> click = alert.showAndWait();
+        if (click.get() == ButtonType.OK) {
+            Stage stage = (Stage) reg_name.getScene().getWindow();
+            stage.close();
         }
     }
 }

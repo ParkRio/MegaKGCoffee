@@ -61,6 +61,21 @@ public class Opener {
         }
     }
 
+    // 회원 아이디, 비밀번호 찾기 화면 실행
+    public void findOpen(Stage findStage) {
+        //Stage findStage = new Stage();
+        try {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Find.fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
+            Scene scene = new Scene(fxmlLoader.load());
+            findStage.setTitle("회원가입 화면");
+            findStage.setScene(scene);
+            findStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // 메뉴 화면 실행
     public void menuOpen(Stage stage) {
         try {

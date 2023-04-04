@@ -29,13 +29,15 @@ public class HomeViewHomeController implements Initializable {
 
     private Opener opener;
 
+    OrderDataSingleton orderDataSingleton = OrderDataSingleton.getInstance();
+
     public void setOpener(Opener opener) {
         this.opener = opener;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        nickname.setText(orderDataSingleton.getReg_nickname());
     }
 
 
