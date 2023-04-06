@@ -50,7 +50,7 @@
       <Label layoutX="107.0" layoutY="646.0" prefHeight="24.0" prefWidth="118.0" text="총 결제금액" />
       <Label fx:id="payment_total_price" alignment="CENTER_RIGHT" layoutX="405.0" layoutY="646.0" prefHeight="24.0" prefWidth="118.0" text="총 결제금액" textFill="RED" />
       <Label alignment="CENTER_RIGHT" layoutX="513.0" layoutY="646.0" prefHeight="24.0" prefWidth="22.0" text="원" />
-      <Button layoutX="278.0" layoutY="686.0" mnemonicParsing="false" onAction="#orderProc" onMouseClicked="#finish_payment" prefHeight="45.0" prefWidth="106.0" text="Button" />
+      <Button layoutX="278.0" layoutY="686.0" mnemonicParsing="false" onMouseClicked="#finish_payment" prefHeight="45.0" prefWidth="106.0" text="Button" />
       <ListView fx:id="menu_list" layoutX="4.0" layoutY="76.0" prefHeight="315.0" prefWidth="621.0" />
    </children>
 </AnchorPane>

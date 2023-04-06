@@ -128,15 +128,6 @@ public class OrderDetailController implements Initializable {
 //        alert.showAndWait();
 
     }
-    // 바로주문 버튼 클릭시 Alert 메시지 문 띄우기 - 테스트 필요
-    public void orderProc(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("결제 완료");
-        alert.setHeaderText("HeaderText");
-        alert.setContentText("ContentText");
-        alert.showAndWait();
-    }
-
     // 주문 페이지 뒤로 가기
     public void back_to_orders(MouseEvent mouseEvent) {
         Stage stage = (Stage) menu_detail.getScene().getWindow();
