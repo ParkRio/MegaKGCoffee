@@ -35,31 +35,13 @@ public class Opener {
                 LoginController loginController = loader.getController();
                 loginController.setOpener(opener);
                 Scene scene = new Scene(orderDetailForm);
-                stage.setTitle("Order Detail");
+                stage.setTitle("Mega Kg Coffee");
                 stage.setScene(scene);
                 stage.show();
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-    }
-
-    // 메뉴 화면 실행
-    public void findOpen() {
-        Stage findStage = new Stage();
-        try {
-            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Find.fxml").toURI().toURL();
-            FXMLLoader loader = new FXMLLoader(fxmlPath);
-            Parent findForm = null;
-            findForm = loader.load();
-            Scene scene = new Scene(findForm);
-            findStage.setTitle("아이디/비밀번호 찾기");
-            findStage.setScene(scene);
-            findStage.show();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     // 회원 가입 화면 실행
@@ -69,7 +51,7 @@ public class Opener {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Register.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
             Scene scene = new Scene(fxmlLoader.load());
-            regStage.setTitle("회원가입 화면");
+            regStage.setTitle("Mega Kg Coffee");
             regStage.setScene(scene);
             regStage.show();
         } catch (Exception e) {
@@ -84,7 +66,7 @@ public class Opener {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Find.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
             Scene scene = new Scene(fxmlLoader.load());
-            findStage.setTitle("회원가입 화면");
+            findStage.setTitle("Mega Kg Coffee");
             findStage.setScene(scene);
             findStage.show();
         } catch (Exception e) {
@@ -103,7 +85,7 @@ public class Opener {
             HomeViewHomeController homeViewHomeController = loader.getController();
             homeViewHomeController.setOpener(opener);
             Scene scene = new Scene(homeView_homeForm);
-            stage.setTitle("메인화면");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
 
@@ -122,7 +104,7 @@ public class Opener {
             LoginController LoginController = loader.getController();
             LoginController.setOpener(opener);
             Scene scene = new Scene(LoginForm);
-            stage.setTitle("메인화면");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
 
@@ -142,7 +124,7 @@ public class Opener {
             OrdersController ordersController = fxmlLoader.getController();
             ordersController.setOpener(opener);
             Scene scene = new Scene(paymentForm);
-            stage.setTitle("Payment");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -161,7 +143,7 @@ public class Opener {
             Parent orderDetailForm = null;
             orderDetailForm = loader.load();
             Scene scene = new Scene(orderDetailForm);
-            primaryStage.setTitle("Order Detail");
+            primaryStage.setTitle("Mega Kg Coffee");
             primaryStage.setScene(scene);
             primaryStage.show();
 
@@ -179,7 +161,7 @@ public class Opener {
             Parent cartForm = null;
             cartForm = loader.load();
             Scene scene = new Scene(cartForm);
-            primaryStage.setTitle("cart");
+            primaryStage.setTitle("Mega Kg Coffee");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {
@@ -199,7 +181,7 @@ public class Opener {
             OrderPaymentController orderPaymentController = fxmlLoader.getController();
             orderPaymentController.setOpener(opener);
             Scene scene = new Scene(paymentForm);
-            stage.setTitle("Payment");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -217,7 +199,7 @@ public class Opener {
             OrderPaymentController orderPaymentController = fxmlLoader.getController();
             orderPaymentController.setOpener(opener);
             Scene scene = new Scene(CartToPaymentForm);
-            stage.setTitle("Payment");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -236,7 +218,7 @@ public class Opener {
             OrdersController ordersController = fxmlLoader.getController();
             ordersController.setOpener(opener);
             Scene scene = new Scene(paymentToOrderForm);
-            stage.setTitle("Orders");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -256,7 +238,7 @@ public class Opener {
             OrdersController ordersController = fxmlLoader.getController();
             ordersController.setOpener(opener);
             Scene scene = new Scene(orderForm);
-            stage.setTitle("Order Page");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
 
@@ -278,7 +260,7 @@ public class Opener {
             HomeViewHomeController homeViewHomeController = fxmlLoader.getController();
             homeViewHomeController.setOpener(opener);
             Scene scene = new Scene(homeform);
-            stage.setTitle("main page");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -299,7 +281,7 @@ public class Opener {
             mainController.setOpener(opener);
 
             Scene backScene = new Scene(backForm);
-            stage.setTitle("test");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(backScene);
             stage.show();
         }catch (Exception e){
@@ -321,7 +303,7 @@ public class Opener {
             mainController.setOpener(opener);
 
             Scene backScene = new Scene(coffeeForm);
-            stage.setTitle("test");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(backScene);
             stage.show();
         }catch (Exception e){
@@ -343,7 +325,7 @@ public class Opener {
             mainController.setOpener(opener);
 
             Scene backScene = new Scene(coffeeForm);
-            stage.setTitle("test");
+            stage.setTitle("Mega Kg Coffee");
             stage.setScene(backScene);
             stage.show();
         }catch (Exception e){

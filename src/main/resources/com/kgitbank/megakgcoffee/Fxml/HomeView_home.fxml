@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="471.0" stylesheets="@../../../../Styles/buttonHover.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="471.0" stylesheets="@../../../../Styles/buttonHover.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FFCD12;" BorderPane.alignment="CENTER">
          <children>
@@ -20,22 +20,22 @@
             </Label>
             <Button fx:id="home" mnemonicParsing="false" onMouseClicked="#home" prefHeight="59.0" prefWidth="132.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px;" text="HOME" textFill="WHITE">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button layoutX="10.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#order" prefHeight="59.0" prefWidth="132.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="ORDER" textFill="WHITE">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setting" prefHeight="59.0" prefWidth="132.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="SETTING" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setting" prefHeight="59.0" prefWidth="132.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MYPAGE" textFill="WHITE">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onMouseClicked="#logout" prefHeight="59.0" prefWidth="132.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="LOGOUT" textFill="WHITE">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
          </children>
