@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="540.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.RegisterController">
+<AnchorPane prefHeight="540.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.RegisterController">
    <children>
       <HBox prefHeight="100.0" prefWidth="406.0" style="-fx-background-color: gold;">
          <children>
@@ -31,7 +31,7 @@
          <children>
             <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="26.0" prefWidth="118.0" text="Name">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
                <effect>
                   <ColorAdjust />
@@ -40,7 +40,7 @@
             <TextField fx:id="reg_name" layoutX="137.0" layoutY="7.0" prefHeight="27.0" prefWidth="184.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="50.0" prefHeight="27.0" prefWidth="118.0" text="ID">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
                <effect>
                   <DisplacementMap>
@@ -53,7 +53,7 @@
             <TextField fx:id="reg_id" layoutX="137.0" layoutY="50.0" prefHeight="27.0" prefWidth="184.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="102.0" prefHeight="27.0" prefWidth="118.0" text="NickName">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
                <effect>
                   <Bloom />
@@ -62,7 +62,7 @@
             <TextField fx:id="reg_nick" layoutX="137.0" layoutY="102.0" prefHeight="27.0" prefWidth="184.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="149.0" prefHeight="27.0" prefWidth="118.0" text="Password">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
                <effect>
                   <Bloom />
@@ -70,17 +70,17 @@
             </Label>
             <Label fx:id="id_check_result" layoutX="137.0" layoutY="77.0" prefHeight="14.0" prefWidth="184.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="195.0" prefHeight="27.0" prefWidth="118.0" text="Password Confirm">
-               <font>
-                  <Font name="Artifakt Element Heavy Italic" size="12.0" />
-               </font>
                <effect>
                   <Bloom />
                </effect>
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
             </Label>
             <Label fx:id="confirm_check_result" layoutX="137.0" layoutY="222.0" prefHeight="14.0" prefWidth="184.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="246.0" prefHeight="27.0" prefWidth="118.0" text="Phone Number">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="12.0" />
+                  <Font name="Arial Bold" size="12.0" />
                </font>
                <effect>
                   <Bloom />
@@ -90,7 +90,7 @@
             <DatePicker fx:id="reg_birth" layoutX="137.0" layoutY="292.0" prefHeight="27.0" prefWidth="208.0" />
             <Label alignment="CENTER" layoutX="7.0" layoutY="292.0" prefHeight="27.0" prefWidth="118.0" text="BirthDay">
                <font>
-                  <Font name="Artifakt Element Heavy Italic" size="12.0" />
+                  <Font name="Arial Bold" size="12.0" />
                </font>
                <effect>
                   <Bloom />

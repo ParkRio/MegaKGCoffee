@@ -13,11 +13,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="795.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController">
+<AnchorPane prefHeight="795.0" prefWidth="631.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController">
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="5.0" layoutY="8.0" prefHeight="35.0" prefWidth="568.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#payment_back_to_orders" prefHeight="35.0" prefWidth="88.0">
+            <Button mnemonicParsing="false" onMouseClicked="#payment_back_to_orders" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: white;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>

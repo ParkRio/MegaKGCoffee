@@ -30,7 +30,7 @@ public class IOrderItemDAO implements OrderItemDAO {
         String insertOrderItemSQL = "INSERT INTO tb_orderItem(item_seq, itemMenu_seq, item_count ,item_price)" +
                 " VALUES(orderItem_seq.NEXTVAL, ?, ?, ?)";
 
-        String selectOrderItemSQL = "SELECT item_seq FROM (SELECT * FROM tb_orderItem ORDER BY ROWNUM DESC)" +
+        String selectOrderItemSQL = "SELECT item_seq FROM (SELECT * FROM tb_orderItem ORDER BY item_seq DESC)" +
                 " WHERE ROWNUM = 1";
 
         try {

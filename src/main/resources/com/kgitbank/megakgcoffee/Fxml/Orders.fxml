@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" style="-fx-background-color: gold;" styleClass="order_container" stylesheets="@../../../../Styles/order.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Orders.OrdersController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" style="-fx-background-color: white;" styleClass="order_container" stylesheets="@../../../../Styles/order.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Orders.OrdersController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: gold;" styleClass="order_top_menu_container" stylesheets="@../../../../Styles/order.css">
          <children>
-            <Button fx:id="back_to_orders_main" mnemonicParsing="false" onMouseClicked="#back_to_orders_main" prefHeight="43.0" prefWidth="70.0" styleClass="order_top_menu_container">
+            <Button fx:id="back_to_orders_main" mnemonicParsing="false" onMouseClicked="#back_to_orders_main" prefHeight="43.0" prefWidth="70.0" style="-fx-background-color: yello;" styleClass="order_top_menu_container">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -26,15 +26,15 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="order_top_menu_container" text="Order" wrappingWidth="258.21630859375" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="-2.0" layoutY="35.0" prefHeight="74.0" prefWidth="400.0" spacing="12.0" style="-fx-background-color: gold;" styleClass="order_container" stylesheets="@../../../../Styles/order.css">
+      <HBox alignment="CENTER" layoutX="-2.0" layoutY="35.0" prefHeight="74.0" prefWidth="400.0" spacing="12.0" style="-fx-background-color: white;" styleClass="order_container" stylesheets="@../../../../Styles/order.css">
          <children>
-            <Button fx:id="category_coffee_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="79.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Coffee" />
-            <Button fx:id="category_smoothie_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Smoothie" />
-            <Button fx:id="category_ade_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Ade" />
-            <Button fx:id="category_Dessert_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: gold;" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Dessert" />
+            <Button fx:id="category_coffee_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="79.0" style="-fx-background-color: white;" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Coffee" />
+            <Button fx:id="category_smoothie_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: white;" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Smoothie" />
+            <Button fx:id="category_ade_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: white;" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Ade" />
+            <Button fx:id="category_Dessert_selected" mnemonicParsing="false" onAction="#categoryPressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: white;" styleClass="order_menu_category_container" stylesheets="@../../../../Styles/order.css" text="Dessert" />
          </children>
       </HBox>
-      <Label fx:id="how_many_items" layoutX="36.0" layoutY="118.0" prefHeight="17.0" prefWidth="70.0" styleClass="order_container" text="items" />
+      <Label fx:id="how_many_items" layoutX="36.0" layoutY="118.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: white;" styleClass="order_container" text="items" />
       <VBox fx:id="order_vbox_one" layoutX="21.0" layoutY="171.0" onMouseClicked="#goOrderDetails" prefHeight="136.0" prefWidth="100.0" stylesheets="@../../../../Styles/order.css">
          <children>
             <Circle fx:id="category_circle_one" fill="#f8de74" radius="50.0" stroke="#f8de74" strokeType="INSIDE" strokeWidth="3.0" />

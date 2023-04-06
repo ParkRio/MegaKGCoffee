@@ -43,7 +43,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(mainForm);
         stage.setScene(scene);
-        stage.setTitle("Connection Test");
+        stage.setTitle("Mega KG Coffee");
         stage.show();
 
 

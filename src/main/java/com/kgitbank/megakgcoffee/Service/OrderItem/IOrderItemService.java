@@ -19,6 +19,11 @@ public class IOrderItemService implements OrderItemService{
     @Override
     public void insertOrderItem(String itemMenu_seq, int cnt, int total_price) {
         try {
+
+            System.out.println("=====================");
+            System.out.println(cnt);
+            System.out.println("=====================");
+
             orderItemMenu_seq = Integer.valueOf(itemMenu_seq);
             OrderItemDTO orderItemDTO = new OrderItemDTO(orderItemMenu_seq, cnt, total_price);
             orderItem_seq = orderItemDAO.insertOrderItem(orderItemDTO);

@@ -196,6 +196,11 @@ public class OrderPaymentController implements Initializable {
             Stage stage = (Stage) menu_list.getScene().getWindow();
             Opener opener = new Opener();
             opener.menuOpen(stage);
+        }else if (click.get() == ButtonType.FINISH){
+            Stage stage = (Stage) menu_list.getScene().getWindow();
+            Opener opener = new Opener();
+            opener.menuOpen(stage);
         }
+
     }
 }

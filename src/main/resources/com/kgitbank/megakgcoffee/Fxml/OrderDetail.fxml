@@ -17,11 +17,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.OrderDetail.OrderDetailController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.OrderDetail.OrderDetailController">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="400.0" styleClass="order_top_menu_container" stylesheets="@../../../../Styles/order.css">
+      <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: white;" styleClass="order_top_menu_container" stylesheets="@../../../../Styles/order.css">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#back_to_orders" prefHeight="43.0" prefWidth="70.0" styleClass="order_top_menu_container">
+            <Button mnemonicParsing="false" onMouseClicked="#back_to_orders" prefHeight="43.0" prefWidth="70.0" style="-fx-background-color: white;" styleClass="order_top_menu_container">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -32,10 +32,10 @@
             </Button>
          </children>
       </HBox>
-      <VBox alignment="CENTER" layoutY="35.0" prefHeight="304.0" prefWidth="400.0" styleClass="order_detail_top_vox_container" stylesheets="@../../../../Styles/orderDetail.css">
+      <VBox alignment="CENTER" layoutY="35.0" prefHeight="304.0" prefWidth="400.0" style="-fx-background-color: white;" styleClass="order_detail_top_vox_container" stylesheets="@../../../../Styles/orderDetail.css">
          <children>
             <Circle fx:id="menu_detail" fill="#f8de74" radius="100.0" stroke="#f8de74" strokeType="INSIDE" />
-            <Label fx:id="menu_name" alignment="CENTER" prefHeight="27.0" prefWidth="200.0" styleClass="order_detail_container" stylesheets="@../../../../Styles/orderDetail.css" text="Americano">
+            <Label fx:id="menu_name" alignment="CENTER" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="order_detail_container" stylesheets="@../../../../Styles/orderDetail.css" text="Americano">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="menu_desc" alignment="CENTER" prefHeight="43.0" prefWidth="300.0" styleClass="order_detail_top_vox_container" stylesheets="@../../../../Styles/orderDetail.css" text="Full Body Americano">
+            <Label fx:id="menu_desc" alignment="CENTER" prefHeight="43.0" prefWidth="300.0" style="-fx-background-color: white;" styleClass="order_detail_top_vox_container" stylesheets="@../../../../Styles/orderDetail.css" text="Full Body Americano">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -53,7 +53,7 @@
             <Separator prefHeight="14.0" prefWidth="400.0" />
          </children>
       </VBox>
-      <GridPane layoutX="-1.0" layoutY="339.0" prefHeight="130.0" prefWidth="400.0" styleClass="order_detail_gridPane" stylesheets="@../../../../Styles/orderDetail.css">
+      <GridPane layoutX="-1.0" layoutY="339.0" prefHeight="130.0" prefWidth="400.0" style="-fx-background-color: white;" styleClass="order_detail_gridPane" stylesheets="@../../../../Styles/orderDetail.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="101.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="273.0" />
@@ -89,7 +89,7 @@
             <Label alignment="CENTER" prefHeight="51.0" prefWidth="122.0" text="수량" GridPane.rowIndex="2" />
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#plus_count_button" prefHeight="47.0" prefWidth="52.0" styleClass="order_detail_container">
+                  <Button mnemonicParsing="false" onMouseClicked="#plus_count_button" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: white;" styleClass="order_detail_container">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -103,7 +103,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" onMouseClicked="#minus_count_button" prefHeight="47.0" prefWidth="52.0" styleClass="order_detail_container">
+                  <Button mnemonicParsing="false" onMouseClicked="#minus_count_button" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: white;" styleClass="order_detail_container">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -122,10 +122,10 @@
          </children>
       </GridPane>
       <Separator layoutY="464.0" prefHeight="14.0" prefWidth="400.0" />
-      <HBox layoutY="472.0" prefHeight="50.0" prefWidth="400.0" styleClass="order_detail_order_button_container" stylesheets="@../../../../Styles/orderDetail.css">
+      <HBox layoutY="472.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: gold;" styleClass="order_detail_order_button_container" stylesheets="@../../../../Styles/orderDetail.css">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#order_now" prefHeight="48.0" prefWidth="197.0" styleClass="order_detail_order_button_container" text="바로 주문" />
-            <Button mnemonicParsing="false" onMouseClicked="#add_to_cart" prefHeight="48.0" prefWidth="212.0" styleClass="order_detail_order_button_container" text="장바구니 추가" />
+            <Button mnemonicParsing="false" onMouseClicked="#order_now" prefHeight="48.0" prefWidth="197.0" style="-fx-background-color: gold;" styleClass="order_detail_order_button_container" text="바로 주문" />
+            <Button mnemonicParsing="false" onMouseClicked="#add_to_cart" prefHeight="48.0" prefWidth="212.0" style="-fx-background-color: gold;" styleClass="order_detail_order_button_container" text="장바구니 추가" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutY="516.0" prefHeight="50.0" prefWidth="400.0" styleClass="order_footer_container" stylesheets="@../../../../Styles/order.css">
