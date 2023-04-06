@@ -2,13 +2,10 @@ package com.kgitbank.megakgcoffee.Opener;
 
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewHomeController;
 import com.kgitbank.megakgcoffee.Controller.HomeView.HomeViewMainController;
-import com.kgitbank.megakgcoffee.Controller.OrderDetail.OrderDetailController;
 import com.kgitbank.megakgcoffee.Controller.Orders.OrdersController;
 import com.kgitbank.megakgcoffee.Controller.Payment.OrderPaymentController;
-import com.kgitbank.megakgcoffee.Controller.Register.FindController;
 import com.kgitbank.megakgcoffee.Controller.Register.LoginController;
 import com.kgitbank.megakgcoffee.Model.DTO.OrderDetail.OrderDataSingleton;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
