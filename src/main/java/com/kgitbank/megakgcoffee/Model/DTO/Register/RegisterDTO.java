@@ -1,5 +1,7 @@
 package com.kgitbank.megakgcoffee.Model.DTO.Register;
 
+import javafx.scene.control.DatePicker;
+
 import java.util.Date;
 
 public class RegisterDTO {

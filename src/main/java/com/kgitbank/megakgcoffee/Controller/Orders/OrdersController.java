@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -61,6 +62,8 @@ public class OrdersController implements Initializable {
     @FXML public Label how_many_items;
     @FXML public Button cart_items;
 
+    @FXML public Button back_to_orders_main;
+
     public Button[] arrayButtons;
     public Circle[] arrayCircles;
     public Label[] arrayLabelNames;
@@ -89,7 +92,7 @@ public class OrdersController implements Initializable {
                 "    -fx-background-color: black;\n" +
                 "    -fx-text-fill: white;");
         ordersService.searchMenu(category_menu, arrayCircles, arrayLabelNames, arrayLabelPrices, arrayVBoxes, how_many_items);
-        cart_items.setText(String.valueOf(orderCheckService.findItemsInTheCart(1))); // todo :: 회원번호 1번으로 실험
+        cart_items.setText(String.valueOf(orderCheckService.findItemsInTheCart(orderDataSingleton.getReg_seq()))); // todo :: 회원번호 1번으로 실험
 
     }
 
@@ -166,5 +169,12 @@ public class OrdersController implements Initializable {
     // 장바구니 화면으로 넘어가는 클릭 이벤트
     public void go_to_cart(MouseEvent mouseEvent) {
         opener.CartPageOpen();
+    }
+
+    // 주문 페이지 뒤로 가기 - 이전(메인화면)으로
+    public void back_to_orders_main(MouseEvent mouseEvent) {
+        Stage stage = (Stage) back_to_orders_main.getScene().getWindow();
+        Opener opener = new Opener();
+        opener.menuOpen(stage);
     }
 }

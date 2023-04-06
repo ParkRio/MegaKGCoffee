@@ -2,55 +2,51 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="540.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.FindController">
-   <children>
-      <TextField fx:id="reg_name" layoutX="92.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
-      <Label alignment="CENTER" layoutX="143.0" layoutY="30.0" text="아이디 찾기" textFill="#b84654">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="7.0" layoutY="97.0" prefHeight="27.0" prefWidth="85.0" text="Name">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="302.0" layoutY="94.0" mnemonicParsing="false" onAction="#idFind" prefHeight="23.0" style="-fx-background-color: gray;" text="ID Find" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TextField fx:id="reg_id" layoutX="92.0" layoutY="251.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
-      <Label alignment="CENTER" layoutX="7.0" layoutY="250.0" prefHeight="27.0" prefWidth="85.0" text="ID">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="reg_nick" layoutX="91.0" layoutY="301.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
-      <Label alignment="CENTER" layoutX="6.0" layoutY="300.0" prefHeight="27.0" prefWidth="85.0" text="NICK">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="128.0" layoutY="188.0" prefHeight="21.0" prefWidth="126.0" text="비밀번호 찾기" textFill="#b84654">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="111.0" layoutY="363.0" mnemonicParsing="false" onAction="#pwFind" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: gray;" text="Password Find" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TextField fx:id="reg_pwd" layoutX="99.0" layoutY="439.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
-      <Label alignment="CENTER" layoutX="3.0" layoutY="438.0" prefHeight="27.0" prefWidth="96.0" text="Password">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" stylesheets="@../../../../Styles/buttonHover.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Find.FindController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="find_id_button" mnemonicParsing="false" onMouseClicked="#find_id_button" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-width: 2;" text="Find ID" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onMouseClicked="#find_pwd_open" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-width: 2;" text="Find Password" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator layoutY="218.0" prefHeight="0.0" prefWidth="400.0" />
+            <Label alignment="CENTER" layoutX="45.0" layoutY="26.0" prefHeight="40.0" prefWidth="80.0" text="Name">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Label>
+            <TextField fx:id="insert_name" layoutX="156.0" layoutY="26.0" prefHeight="40.0" prefWidth="175.0" />
+            <Label alignment="CENTER" layoutX="45.0" layoutY="96.0" prefHeight="40.0" prefWidth="80.0" text="Phone">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Label>
+            <TextField fx:id="insert_phone" layoutX="156.0" layoutY="96.0" prefHeight="40.0" prefWidth="175.0" />
+            <Button layoutX="160.0" layoutY="164.0" mnemonicParsing="false" onMouseClicked="#find_id" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="12.0" />
+               </font></Button>
+            <Label fx:id="result_label" alignment="CENTER" layoutX="40.0" layoutY="239.0" prefHeight="40.0" prefWidth="320.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

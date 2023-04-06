@@ -28,8 +28,6 @@ public class OrderDetailDTO {
         return new OrderDetailDTO(menu_seq, itemCount, menuPrice);
     }
 
-
-
     public String getMenuName() {
         return menuName;
     }

@@ -5,12 +5,11 @@ import com.kgitbank.megakgcoffee.Connection.ConnectionMaker;
 import com.kgitbank.megakgcoffee.Model.DTO.HomeView.HomeViewDTO;
 import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class RegisterDAO {
     private ConnectionMaker connectionMaker = ConnectionFactory.getOracleInstance();
@@ -26,8 +25,13 @@ public class RegisterDAO {
 
     public void regProc(RegisterDTO reg) {
 
+        LocalDate myDate = LocalDate.parse(reg.getReg_birth());
+        Date birthday = Date.valueOf(myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+
+        // todo :: 회원테이블에서 생성일은 지울것
+
         PreparedStatement ps = null;
-        String sql = "INSERT INTO tb_register(reg_seq, reg_name, reg_id, reg_nick, reg_pwd, reg_tel, reg_birth) VALUES(register_seq.NEXTVAL,?,?,?,?,?,SYSDATE)";
+        String sql = "INSERT INTO tb_register(reg_seq, reg_name, reg_id, reg_nick, reg_pwd, reg_tel, reg_birth, reg_date) VALUES(register_seq.NEXTVAL,?,?,?,?,?,?,?)";
 
         try {
             ps = connection.prepareStatement(sql);
@@ -36,7 +40,8 @@ public class RegisterDAO {
             ps.setString(3, reg.getReg_nick());
             ps.setString(4, reg.getReg_pwd());
             ps.setString(5, reg.getReg_tel());
-//            ps.setString(6, reg.getReg_birth());
+            ps.setDate(6, birthday);
+            ps.setDate(7, getCurrentDate());
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,6 +83,11 @@ public class RegisterDAO {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private java.sql.Date getCurrentDate() {
+        java.util.Date today = new java.util.Date();
+        return new java.sql.Date(today.getTime());
     }
 
 }

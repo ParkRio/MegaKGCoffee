@@ -41,9 +41,9 @@
       <AnchorPane layoutX="7.0" layoutY="398.0" prefHeight="221.0" prefWidth="615.0">
          <children>
             <Label layoutX="33.0" layoutY="25.0" prefHeight="24.0" prefWidth="118.0" text="매장 요청사항" />
-            <TextArea layoutX="33.0" layoutY="55.0" prefHeight="81.0" prefWidth="546.0" />
+            <TextArea fx:id="request_msg" layoutX="33.0" layoutY="55.0" prefHeight="81.0" prefWidth="546.0" />
             <Label layoutX="33.0" layoutY="147.0" prefHeight="24.0" prefWidth="118.0" text="현금 영수증" />
-            <TextField layoutX="33.0" layoutY="177.0" prefHeight="22.0" prefWidth="546.0" />
+            <TextField fx:id="cash_bill" layoutX="33.0" layoutY="177.0" prefHeight="22.0" prefWidth="546.0" />
          </children>
       </AnchorPane>
       <Separator layoutY="392.0" prefHeight="12.0" prefWidth="627.0" />

@@ -6,12 +6,14 @@ import com.kgitbank.megakgcoffee.Model.DTO.Register.RegisterDTO;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import java.util.Date;
+
 public class RegisterService {
 
     LoginDAO loginDao = new LoginDAO();
     RegisterDAO registerDAO = new RegisterDAO();
 
-    public void regProc(RegisterDTO reg, Label confirm_check, PasswordField confirm) {
+    public boolean regProc(RegisterDTO reg, Label confirm_check, PasswordField confirm) {
         // 아이디 중복 검증
 //        String dbPw = loginDao.loginProc(reg.getReg_id());
 //        if(dbPw != null) {
@@ -25,54 +27,54 @@ public class RegisterService {
             confirm.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-background-color: rgb(255,198,198)");
             confirm_check.setText("비밀번호가 일치하지 않습니다.");
             confirm_check.setStyle("-fx-text-fill: red");
-            return;
+            return false;
         }
 
         // 이름 입력 검사
         String nameStr = reg.getReg_name();
         if(nameStr.isEmpty()){
             CommonService.msg("이름을 입력해주세요.");
-            return;
+            return false;
         }
 
         // 아이디 입력 검사
         String idStr = reg.getReg_id();
         if(idStr.isEmpty()){
             CommonService.msg("아이디를 입력해주세요.");
-            return;
+            return false;
         }
 
         // 닉네임 입력 검사
         String nickStr = reg.getReg_nick();
         if(nickStr.isEmpty()){
             CommonService.msg("닉네임을 입력해주세요.");
-            return;
+            return false;
         }
 
         // 비밀번호 입력 검사
         String pwStr = reg.getReg_pwd();
         if(pwStr.isEmpty()){
             CommonService.msg("비밀번호를 입력해주세요.");
-            return;
+            return false;
         }
 
         // 전화번호 입력 검사
         String telStr = reg.getReg_tel();
         if(telStr.isEmpty()){
             CommonService.msg("전화번호를 입력해주세요.");
-            return;
+            return false;
         }
 
         // 생년월일 입력 검사
         String birthStr = reg.getReg_birth();
-        if(birthStr.isEmpty()){
+        if(birthStr == null || birthStr.isEmpty()){
             CommonService.msg("생년월일을 입력해주세요.");
-            return;
+            return false;
         }
 
         // 회원 가입
-        RegisterDAO regDao = new RegisterDAO();
-        regDao.regProc(reg);
+        registerDAO.regProc(reg);
+        return true;
 
     }
 
