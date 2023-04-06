@@ -11,9 +11,17 @@ public class ResponseRegDTO {
 
     public ResponseRegDTO(int reg_seq, String reg_name, String reg_nick, String reg_id){
         this.reg_seq = reg_seq;
-        this.reg_nick = reg_nick;
         this.reg_name = reg_name;
+        this.reg_nick = reg_nick;
         this.reg_id = reg_id;
+    }
+
+    public ResponseRegDTO(String reg_id) {
+        this.reg_id = reg_id;
+    }
+
+    public static ResponseRegDTO FindId(String reg_id) {
+        return new ResponseRegDTO(reg_id);
     }
 
 

@@ -52,7 +52,7 @@ public class LoginDAO {
     }
 
     public String loginCheck(String id) {
-        String sql = "SELECT reg_login FROM tb_register WHERE reg_id=?";
+        String sql = "SELECT reg_delete FROM tb_register WHERE reg_id=?";
         PreparedStatement ps = null;
         ResultSet rs = null;
         String regLogin = null;
@@ -61,7 +61,7 @@ public class LoginDAO {
             ps.setString(1, id);
             rs = ps.executeQuery();
             if(rs.next()) {
-                regLogin = rs.getString("reg_login");
+                regLogin = rs.getString("reg_delete");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,8 +84,8 @@ public class LoginDAO {
                  responseRegDTO = new ResponseRegDTO(
                         rs.getInt("reg_seq"),
                         rs.getString("reg_name"),
-                        rs.getString("reg_id"),
-                        rs.getString("reg_nick")
+                        rs.getString("reg_nick"),
+                        rs.getString("reg_id")
                 );
             }
             rs.close();

@@ -7,6 +7,7 @@ import com.kgitbank.megakgcoffee.Service.Cart.CartService;
 import com.kgitbank.megakgcoffee.Service.Cart.CartServiceFactory;
 import com.kgitbank.megakgcoffee.Service.OrderCheck.OrderCheckServiceFactory;
 import com.kgitbank.megakgcoffee.Service.OrderCheck.OrderCheckService;
+import com.kgitbank.megakgcoffee.Service.Register.CommonService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -122,11 +123,16 @@ public class CartController implements Initializable {
                 cartDTOArrayList.add(cart);
             }
         }
-        orderDataSingleton.setArrayList(cartDTOArrayList);
-        orderDataSingleton.setCheckOrder(0);
-        Stage stage = (Stage) cart_table.getScene().getWindow();
-        Opener opener = new Opener();
-        opener.CartToOrderPayment(stage);
+
+        if (cartDTOArrayList.size() == 0) {
+            CommonService.msg("장바구니에서 아무것도 선택되지 않았습니다.");
+        } else {
+            orderDataSingleton.setArrayList(cartDTOArrayList);
+            orderDataSingleton.setCheckOrder(0);
+            Stage stage = (Stage) cart_table.getScene().getWindow();
+            Opener opener = new Opener();
+            opener.CartToOrderPayment(stage);
+        }
     }
 
 

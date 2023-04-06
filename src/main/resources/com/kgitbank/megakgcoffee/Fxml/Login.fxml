@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.LoginController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="400.0" stylesheets="@../../../../Styles/buttonHover.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Register.LoginController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="400.0">
          <children>
@@ -70,7 +70,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#regProc" prefHeight="43.0" prefWidth="220.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="join the membership" textFill="WHITE">
+            <Button fx:id="register_button" mnemonicParsing="false" onAction="#regProc" prefHeight="43.0" prefWidth="220.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="join the membership" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -81,7 +81,7 @@
                   <Font name="Artifakt Element Heavy Italic" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="224.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find ID Password" textFill="WHITE">
+            <Button fx:id="find_button" mnemonicParsing="false" onAction="#findProc" prefHeight="23.0" prefWidth="224.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find ID Password" textFill="WHITE">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>

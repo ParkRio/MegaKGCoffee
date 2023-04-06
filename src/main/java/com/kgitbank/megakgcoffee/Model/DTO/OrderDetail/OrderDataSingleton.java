@@ -20,6 +20,8 @@ public class OrderDataSingleton {
 
     private String reg_name; // 회원 이름 정보
     
+    private String reg_nickname; // 회원 닉네임 정보
+    
     private String YesOrNO = "N"; // 로그인 판별
 
     private OrderDataSingleton(){}
@@ -82,5 +84,13 @@ public class OrderDataSingleton {
 
     public void setYesOrNO(String yesOrNO) {
         YesOrNO = yesOrNO;
+    }
+
+    public String getReg_nickname() {
+        return reg_nickname;
+    }
+
+    public void setReg_nickname(String reg_nickname) {
+        this.reg_nickname = reg_nickname;
     }
 }
