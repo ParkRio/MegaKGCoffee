@@ -129,27 +129,33 @@ public class RegisterController implements Initializable {
         }
 
         LocalDate myDate = reg_birth.getValue();
-        String birth = myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
-        if (id_check_count > 0 && service.ExistId(reg_id.getText())) {
-
-            RegisterDTO reg = new RegisterDTO(
-                    reg_name.getText(),
-                    reg_id.getText(),
-                    reg_nick.getText(),
-                    reg_pwd.getText(),
-                    confirm.getText(),
-                    reg_tel.getText(),
-                    birth
-            );
-
-            service.regProc(reg, confirm_check_result, confirm);
-            successRegister();
+        if (myDate == null) {
+            CommonService.msg("생년월일을 입력해주세요.");
 
         } else {
-            CommonService.msg("모든 사항을 입력해주시고 아이디 중복체크를 선택해주세요.");
-        }
 
+            String birth = myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+            if (id_check_count > 0 && service.ExistId(reg_id.getText())) {
+
+                RegisterDTO reg = new RegisterDTO(
+                        reg_name.getText(),
+                        reg_id.getText(),
+                        reg_nick.getText(),
+                        reg_pwd.getText(),
+                        confirm.getText(),
+                        reg_tel.getText(),
+                        birth
+                );
+
+                if(service.regProc(reg, confirm_check_result, confirm)) {
+                    successRegister();
+                }
+
+            } else {
+                CommonService.msg("모든 사항을 입력해주시고 아이디 중복체크를 선택해주세요.");
+            }
+        }
     }
 
     // 회원 화면에서 취소 버튼

@@ -57,4 +57,7 @@ module com.kgitbank.megakgcoffee {
     opens com.kgitbank.megakgcoffee.Controller.Find to javafx.fxml;
     exports com.kgitbank.megakgcoffee.Controller.Find;
 
+    opens com.kgitbank.megakgcoffee.Controller.UserSetting to javafx.fxml;
+    exports com.kgitbank.megakgcoffee.Controller.UserSetting;
+
 }

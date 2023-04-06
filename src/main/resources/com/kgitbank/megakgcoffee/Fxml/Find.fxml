@@ -7,27 +7,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" stylesheets="@../../../../Styles/buttonHover.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kgitbank.megakgcoffee.Controller.Find.FindController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="200.0" text="Find ID" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="200.0" text="Find Password" />
+            <Button fx:id="find_id_button" mnemonicParsing="false" onMouseClicked="#find_id_button" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-width: 2;" text="Find ID" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onMouseClicked="#find_pwd_open" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-width: 2;" text="Find Password" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
          <children>
             <Separator layoutY="218.0" prefHeight="0.0" prefWidth="400.0" />
-            <Label alignment="CENTER" layoutX="45.0" layoutY="26.0" prefHeight="40.0" prefWidth="80.0" text="Name" />
-            <TextField layoutX="156.0" layoutY="26.0" prefHeight="40.0" prefWidth="175.0" />
-            <Label alignment="CENTER" layoutX="45.0" layoutY="96.0" prefHeight="40.0" prefWidth="80.0" text="Name" />
-            <TextField layoutX="156.0" layoutY="96.0" prefHeight="40.0" prefWidth="175.0" />
-            <Button layoutX="160.0" layoutY="164.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Find" />
-            <Label alignment="CENTER" layoutX="40.0" layoutY="239.0" prefHeight="40.0" prefWidth="320.0" text="Label" />
+            <Label alignment="CENTER" layoutX="45.0" layoutY="26.0" prefHeight="40.0" prefWidth="80.0" text="Name">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Label>
+            <TextField fx:id="insert_name" layoutX="156.0" layoutY="26.0" prefHeight="40.0" prefWidth="175.0" />
+            <Label alignment="CENTER" layoutX="45.0" layoutY="96.0" prefHeight="40.0" prefWidth="80.0" text="Phone">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="18.0" />
+               </font></Label>
+            <TextField fx:id="insert_phone" layoutX="156.0" layoutY="96.0" prefHeight="40.0" prefWidth="175.0" />
+            <Button layoutX="160.0" layoutY="164.0" mnemonicParsing="false" onMouseClicked="#find_id" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: black; -fx-border-radius: 100; -fx-border-width: 2;" text="Find" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="12.0" />
+               </font></Button>
+            <Label fx:id="result_label" alignment="CENTER" layoutX="40.0" layoutY="239.0" prefHeight="40.0" prefWidth="320.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </center>

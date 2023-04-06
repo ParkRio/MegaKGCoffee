@@ -47,8 +47,8 @@ public class Opener {
     }
 
     // 회원 가입 화면 실행
-    public void regOpen() {
-        Stage regStage = new Stage();
+    public void regOpen(Stage regStage) {
+        //Stage regStage = new Stage();
         try {
             URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Register.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlPath);
@@ -87,6 +87,25 @@ public class Opener {
             HomeViewHomeController homeViewHomeController = loader.getController();
             homeViewHomeController.setOpener(opener);
             Scene scene = new Scene(homeView_homeForm);
+            stage.setTitle("메인화면");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loginOpen(Stage stage) {
+        try {
+            URL fxmlPath = new File("src/main/resources/com/kgitbank/megakgcoffee/Fxml/Login.fxml").toURI().toURL();
+            FXMLLoader loader = new FXMLLoader(fxmlPath);
+            Parent LoginForm = null;
+            LoginForm = loader.load();
+            Opener opener = new Opener();
+            LoginController LoginController = loader.getController();
+            LoginController.setOpener(opener);
+            Scene scene = new Scene(LoginForm);
             stage.setTitle("메인화면");
             stage.setScene(scene);
             stage.show();
