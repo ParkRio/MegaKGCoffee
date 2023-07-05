@@ -2,17 +2,13 @@ package com.kgitbank.megakgcoffee.Connection;
 
 public class GitTestCode {
 
-    private String name;
+    private String tttt;
 
-    public GitTestCode(String name) {
-        this.name = name;
+    public String getTttt() {
+        return tttt;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setTttt(String tttt) {
+        this.tttt = tttt;
     }
 }
